@@ -1,0 +1,3 @@
+[submodule "drake-distro"]
+	path = drake-distro
+	url = https://github.com/RobotLocomotion/drake-distro.git
