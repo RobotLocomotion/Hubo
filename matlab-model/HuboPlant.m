@@ -2,7 +2,7 @@ classdef HuboPlant < TimeSteppingRigidBodyManipulator
     methods
         function obj=HuboPlant(urdf, time,options)
             if nargin < 1 || isempty(urdf)
-                urdf = 'hubo-wBaseLink.urdf';
+                urdf = 'HuboBaseLink.urdf';
             end
             if nargin < 2
                 time = .0005;
