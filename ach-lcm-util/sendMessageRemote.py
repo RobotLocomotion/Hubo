@@ -1,3 +1,9 @@
+'''
+Author: alexc89@mit.edu
+SendMessageRemote
+This is a remote version of the SendMessage demo contained in LCM.  Used to test the multicast.
+'''
+
 import lcm
 import time
 

@@ -1,3 +1,9 @@
+'''
+Author: alexc89@mit.edu
+ListenerRemote
+Based on Listener, it is a multicast/remote version of the example demo contained in LCM package.
+
+'''
 import lcm
 
 from exlcm import example_t

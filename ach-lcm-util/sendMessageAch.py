@@ -1,3 +1,10 @@
+'''
+Author: alexc89@mit.edu
+SendMessageAch
+This is used to test that the conversion between ach and lcm is correct.
+'''
+
+
 import lcm
 import time
 import ach

@@ -1,3 +1,10 @@
+'''
+Author: LCM
+Listener
+LCM example demo script.  Used to test the condition of the lcm channel.
+
+'''
+
 import lcm
 
 from exlcm import example_t

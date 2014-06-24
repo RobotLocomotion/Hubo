@@ -1,3 +1,10 @@
+'''
+Author: alexc89@mit.edu
+SendMessageAchMatlab
+Used to multicast Hubo's status on LCM.  It will take the information received on ACH and convert it to LCM.  This is needed for live visualization.
+
+'''
+
 import lcm
 import time
 import ach
