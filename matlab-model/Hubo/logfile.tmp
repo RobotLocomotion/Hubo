@@ -1,0 +1,66 @@
+Path 4.7.03: Matlab Link
+58 row/cols, 2482 non-zeros, 73.78% dense.
+
+Could not open options file: path.opt
+Using defaults.
+Path 4.7.03 (Mon Feb 27 19:48:03 2012)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  0.0000e+00 var: (x[    1])
+Maximum of F. . . . . . . . . .  2.3803e+00 eqn: (f[   15])
+Maximum of Grad F . . . . . . .  2.9293e+02 eqn: (f[    1])
+                                            var: (x[    1])
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.9293e+02 eqn: (f[    1])
+Minimum Row Norm. . . . . . . .  1.1080e-02 eqn: (f[   13])
+Maximum Column Norm . . . . . .  2.9316e+02 var: (x[    1])
+Minimum Column Norm . . . . . .  3.2386e+00 var: (x[   13])
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             9.4772e+00             0.0e+00 (f[   15])
+    1     2    39    22 8.9619e+00  8.0e-01    9.5e-02 (f[   27])
+    2     4    27    36 6.5410e+00  8.0e-01    8.5e-02 (f[   17])
+    3     8    14    37 4.1532e+00  4.1e-01    6.5e-02 (f[   27])
+    4    14     7    37 4.0452e+00  1.7e-01    4.2e-02 (f[   50])
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0    15     5 4.0452e+00           I 3.7e-02 1.6e+00 (f[   50])
+    1    19    16     6 5.1751e-02  1.0e+00 SM 1.5e-02 3.0e-02 (f[   51])
+    2     4    17     7 2.7815e-03  1.0e+00 SO 5.2e-03 1.7e-03 (f[   51])
+    3     4    18     8 3.9389e-04  1.0e+00 SO 2.8e-04 3.2e-04 (f[   13])
+    4     2    19     9 9.9399e-05  1.0e+00 SO 3.9e-05 8.7e-05 (f[   13])
+    5     1    20    10 6.6227e-06  1.0e+00 SO 9.9e-06 6.3e-06 (f[   13])
+    6     1    21    11 3.3853e-08  1.0e+00 SO 6.6e-07 3.2e-08 (f[   13])
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.1999e-08 eqn: (f[   13])
+Inf-Norm of Normal Map. . . . .  3.1999e-08 eqn: (f[   13])
+Inf-Norm of Minimum Map . . . .  3.1999e-08 eqn: (f[   13])
+Inf-Norm of Fischer Function. .  3.1999e-08 eqn: (f[   13])
+Inf-Norm of Grad Fischer Fcn. .  4.4358e-08 eqn: (f[    3])
+Two-Norm of Grad Fischer Fcn. .  5.0599e-08
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  4.1390e+00 var: (x[   13])
+Maximum of F. . . . . . . . . .  4.6730e+00 eqn: (f[   33])
+Maximum of Grad F . . . . . . .  2.9293e+02 eqn: (f[    1])
+                                            var: (x[    1])
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 6
+Minor Iterations. . . . 31
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 4
+Gradient Steps. . . . . 0
+Function Evaluations. . 21
+Gradient Evaluations. . 11
+Basis Time. . . . . . . 0.010000
+Total Time. . . . . . . 0.030000
+Residual. . . . . . . . 3.385295e-08
