@@ -6,7 +6,7 @@ options.twoD = true;
 options.terrain = RigidBodyFlatTerrain();
 
 w = warning('off','Drake:RigidBodyManipulator:UnsupportedContactPoints');
-r = TimeSteppingRigidBodyManipulator('urdf/hubo_shifted.urdf',0.01,options);
+r = TimeSteppingRigidBodyManipulator('HuboShifted.urdf',0.01,options);
 warning(w);
 r = setSimulinkParam(r,'MinStep','0.001');
 v = r.constructVisualizer;

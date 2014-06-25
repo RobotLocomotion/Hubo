@@ -9,7 +9,7 @@ warning('on','Drake:RigidBodyManipulator:UnsupportedJointLimits');
 warning('on','Drake:RigidBodyManipulator:BodyHasZeroInertia');
 warning('on','Drake:RigidBodyManipulator:UnsupportedVelocityLimits');
 warning('on','Drake:RigidBodyGeometry:SimplifiedCollisionGeometry');
-r = TimeSteppingRigidBodyManipulator('HuboBaseLink.urdf',0.001,options);
+r = TimeSteppingRigidBodyManipulator('urdf/hubo_base_link.urdf',0.001,options);
 warning(w);
 
 r = setSimulinkParam(r,'MinStep','0.001');
@@ -23,7 +23,6 @@ if (0)
   % Run animation while it is simulating (as fast as possible, but probably
   % slower than realtime)
   s = warning('off','Drake:DrakeSystem:UnsupportedSampleTime');  % we are knowingly breaking out to a simulink model with the cascade on the following line.
-  sys = cascade(r,v);
   warning(s);
   simulate(sys,[0 2],x0)
 else 

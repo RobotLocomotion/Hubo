@@ -1,2 +1,0 @@
-classdef HuboInput < LCMCoordinateFrame
-end

@@ -1,5 +1,5 @@
 function drawHubo
 
-r = RigidBodyManipulator('HuboShifted.urdf');
+r = RigidBodyManipulator('urdf/hubo_shifted.urdf');
 
 v = r.constructVisualizer();

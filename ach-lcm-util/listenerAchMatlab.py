@@ -19,7 +19,7 @@ def my_handler(channel, data):
     
 
 lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=2")
-subscription = lc.subscribe("EXAMPLE", my_handler)
+subscription = lc.subscribe("HuboRef", my_handler)
 
 try:
     while True:

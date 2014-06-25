@@ -166,8 +166,6 @@ classdef HuboState < LCMCoordinateFrame
               msg.RAPdot;
               msg.RARdot];
                 
-              disp([ 'LSP(POS):    ' sprintf('%f ', msg.LSP) ])
-              disp([ 'LSP(VEL): ' sprintf('%f ', msg.LSPdot) ])
               t = msg.timestamp;
               obj.x = x;
               obj.t = t;

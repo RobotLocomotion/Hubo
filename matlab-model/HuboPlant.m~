@@ -2,7 +2,7 @@ classdef HuboPlant < TimeSteppingRigidBodyManipulator
     methods
         function obj=HuboPlant(urdf, time,options)
             if nargin < 1 || isempty(urdf)
-                urdf = 'urdf/hubo_base_link.urdf';
+                urdf = 'HuboBaseLink.urdf';
             end
             if nargin < 2
                 time = .0005;
@@ -17,8 +17,8 @@ classdef HuboPlant < TimeSteppingRigidBodyManipulator
             obj = obj.setStateFrame(state_frame);
             obj = obj.setOutputFrame(state_frame);
             %Input
-            input_frame = HuboInput(obj);
-            obj = obj.setInputFrame(input_frame);
+            %input_frame = HuboInput(obj);
+            %obj = obj.setInputFrame(input_frame);
             
             
             %kp = diag([repmat(150,1,18),repmat(200,1,9)]); % note: not tunes AT ALL yet
@@ -41,6 +41,7 @@ classdef HuboPlant < TimeSteppingRigidBodyManipulator
                 v.draw(t,x)
                 pause(0.1)
             end
+            
         end
     end
 end

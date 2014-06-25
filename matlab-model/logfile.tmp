@@ -1,0 +1,60 @@
+Path 4.7.03: Matlab Link
+33 row/cols, 877 non-zeros, 80.53% dense.
+
+Could not open options file: path.opt
+Using defaults.
+Path 4.7.03 (Mon Feb 27 19:48:03 2012)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  0.0000e+00 var: (x[    1])
+Maximum of F. . . . . . . . . .  4.4346e-01 eqn: (f[   19])
+Maximum of Grad F . . . . . . .  2.9540e+02 eqn: (f[    5])
+                                            var: (x[    5])
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  4.5142e+02 eqn: (f[    4])
+Minimum Row Norm. . . . . . . .  1.4006e-02 eqn: (f[    8])
+Maximum Column Norm . . . . . .  4.5169e+02 var: (x[    4])
+Minimum Column Norm . . . . . .  1.1587e+00 var: (x[    8])
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.4284e+00             0.0e+00 (f[   19])
+    1    11    17    14 1.0148e+00  3.2e-04    0.0e+00 (f[   23])
+    2    21     9    18 9.9337e-01  1.9e-03    0.0e+00 (f[   23])
+    3    28     7    20 9.5741e-01  6.9e-02    0.0e+00 (f[   30])
+pn_search terminated: no progress.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0    41     4 9.5741e-01           I 0.0e+00 7.4e-01 (f[   30])
+    1     7    42     5 8.3884e-17  1.0e+00 SM 0.0e+00 8.3e-17 (f[   17])
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  8.3267e-17 eqn: (f[   17])
+Inf-Norm of Normal Map. . . . .  8.3267e-17 eqn: (f[   17])
+Inf-Norm of Minimum Map . . . .  8.3267e-17 eqn: (f[   17])
+Inf-Norm of Fischer Function. .  8.3267e-17 eqn: (f[   17])
+Inf-Norm of Grad Fischer Fcn. .  9.5607e-16 eqn: (f[    4])
+Two-Norm of Grad Fischer Fcn. .  1.1680e-15
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  4.4119e-01 var: (x[   31])
+Maximum of F. . . . . . . . . .  8.8237e-01 eqn: (f[   27])
+Maximum of Grad F . . . . . . .  2.9540e+02 eqn: (f[    5])
+                                            var: (x[    5])
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 7
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 3
+Gradient Steps. . . . . 0
+Function Evaluations. . 42
+Gradient Evaluations. . 5
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.010000
+Residual. . . . . . . . 8.388426e-17
