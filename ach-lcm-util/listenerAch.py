@@ -1,14 +1,13 @@
 import lcm
 import hubo_ach as ha
-
-from hubo import hubo_state
+import lcmt_hubo2state
 
 def my_handler(channel, data):
-    msg = hubo_state.decode(data)
+    msg = lcmt_hubo2state.decode(data)
     print("   positionRF2    = %s" % str(msg.joint[ha.RF2].pos))
 
-lc = lcm.LCM()
-subscription = lc.subscribe("EXAMPLE", my_handler)
+lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
+subscription = lc.subscribe("HuboRef", my_handler)
 
 try:
     while True:
