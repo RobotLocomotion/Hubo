@@ -11,7 +11,7 @@ import ach
 import hubo_ach as ha
 import time
 from ctypes import *
-
+import threading 
 #Import LCM Messages
 from lcmtypes import lcmt_hubo2state as lcmt
 
@@ -150,11 +150,11 @@ class huboLCMWrapper:
         self.state = ha.HUBO_STATE()
         self.ref = ha.HUBO_REF()
         self.stateChan = ach.Channel(ha.HUBO_CHAN_STATE_NAME)
-        self.refChan = ach.CHannel(ha.HUBO_CHAN_REF_NAME)
+        self.refChan = ach.Channel(ha.HUBO_CHAN_REF_NAME)
         self.lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
         self.stateChan.flush()
         self.refChan.flush()
-        self.subscription = self.lc.subscribe("HuboRef",command_handler)
+        self.subscription = self.lc.subscribe("HuboRef",self.command_handler)
         
     def command_handler(self,channel,data):
         msg = lcmt.lcmt_hubo2state.encode(data)
@@ -170,14 +170,20 @@ class huboLCMWrapper:
 
     def mainLoop(self,freq):
         pauseDelay = 1.0/freq #In Seconds.
+        t = 1
+        def broadcastLoop():
+            while True:
+                self.broadcast_state()
+                time.sleep(pauseDelay)
         try:
+            t = threading.Thread(target=broadcastLoop)
+            t.daemon = True
+            t.start()
             while True:
                 time.sleep(pauseDelay)
-                broadcast_state()
                 self.lc.handle()
         except KeyboardInterrupt:
             pass
-            
 
 if __name__ == "__main__":
     wrapper = huboLCMWrapper()

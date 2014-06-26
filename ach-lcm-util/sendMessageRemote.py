@@ -7,7 +7,7 @@ This is a remote version of the SendMessage demo contained in LCM.  Used to test
 import lcm
 import time
 
-from  import example_t
+from lcmtypes import example_t
 
 lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=2")
 

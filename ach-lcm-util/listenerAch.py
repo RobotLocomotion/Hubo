@@ -7,7 +7,7 @@ def my_handler(channel, data):
     print("   positionRF2    = %s" % str(msg.joint[ha.RF2].pos))
 
 lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
-subscription = lc.subscribe("HuboRef", my_handler)
+subscription = lc.subscribe("HuboState", my_handler)
 
 try:
     while True:
