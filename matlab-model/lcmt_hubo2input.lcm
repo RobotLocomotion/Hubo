@@ -1,0 +1,47 @@
+// Note: this file was automatically generated using the
+// CoordinateFrame.generateLCMType() method.
+
+struct lcmt_hubo2input
+{
+  int64_t timestamp;
+
+  double NeckYaw_motor;
+  double Neck1_motor;
+  double Neck2_motor;
+  double LeftShoulderPitch_motor;
+  double LeftShoulderRoll_motor;
+  double LeftShoudlerYaw_motor;
+  double LeftElbowPitch_motor;
+  double LeftWristYaw_motor;
+  double LeftWristPitch_motor;
+  double LeftFinger1_motor;
+  double LeftFinger5_motor;
+  double LeftFinger4_motor;
+  double LeftFinger3_motor;
+  double LeftFinger2_motor;
+  double RightShoulderPitch_motor;
+  double RightShoulderRoll_motor;
+  double RightShoulderYaw_motor;
+  double RightElbowPitch_motor;
+  double RightWristYaw_motor;
+  double RightWristPitch_motor;
+  double RightFinger1_motor;
+  double RightFinger5_motor;
+  double RightFinger4_motor;
+  double RightFinger3_motor;
+  double RightFinger2_motor;
+  double TrunkYaw_motor;
+  double LeftHipYaw_motor;
+  double LeftHipRoll_motor;
+  double LeftHipPitch_motor;
+  double LeftKneePitch_motor;
+  double LeftAnklePitch_motor;
+  double LeftAnkleRoll_motor;
+  double RightHipYaw_motor;
+  double RightHipRoll_motor;
+  double RightHipPitch_motor;
+  double RightKneePitch_motor;
+  double RightAnklePitch_motor;
+  double RightAnkleRoll_motor;
+}
+

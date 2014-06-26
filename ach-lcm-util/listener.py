@@ -7,7 +7,7 @@ LCM example demo script.  Used to test the condition of the lcm channel.
 
 import lcm
 
-from exlcm import example_t
+from lcmtypes from exlcm import example_t
 
 def my_handler(channel, data):
     msg = example_t.decode(data)

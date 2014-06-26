@@ -13,7 +13,7 @@ import time
 from ctypes import *
 
 #Import LCM Messages
-from hubo import *
+from lcmtypes import *
 
 #Message Conversion
 ##TODOi

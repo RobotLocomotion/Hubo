@@ -1,6 +1,6 @@
 import lcm
 import hubo_ach as ha
-import lcmt_hubo2state
+from lcmtypes import lcmt_hubo2state
 
 def my_handler(channel, data):
     msg = lcmt_hubo2state.decode(data)

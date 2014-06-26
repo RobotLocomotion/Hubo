@@ -13,7 +13,8 @@ import time
 from ctypes import *
 
 #Import LCM Messages
-import lcmt_hubo2state as lcmt
+from lcmtypes import lcmt_hubo2state as lcmt
+
 
 
 

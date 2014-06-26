@@ -6,7 +6,7 @@ Based on Listener, it is a multicast/remote version of the example demo containe
 '''
 import lcm
 
-from exlcm import example_t
+from lcmtypes.exlcm import example_t
 
 def my_handler(channel, data):
     msg = example_t.decode(data)

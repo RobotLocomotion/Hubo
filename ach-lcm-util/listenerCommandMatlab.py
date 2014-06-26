@@ -9,7 +9,7 @@ import hubo_ach as ha
 import time
 import ach
 
-import lcmt_hubo2state as lcmt
+from lcmtype import lcmt_hubo2state as lcmt
 
 
 

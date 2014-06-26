@@ -7,7 +7,7 @@ This is the example demo script that is already contained in the LCM Pacakage.
 import lcm
 import time
 
-from exlcm import example_t
+from lcmtypes import example_t
 
 lc = lcm.LCM()
 
