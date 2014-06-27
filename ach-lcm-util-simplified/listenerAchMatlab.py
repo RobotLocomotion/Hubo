@@ -9,14 +9,14 @@ import hubo_ach as ha
 import time
 import ach
 
-from lcmtypes import hubo.hubo_hubo2state
+from lcmtypes import hubo_hubo2state
 
 
 
 def my_handler(channel, data):
-    msg = hubo.hubo_hubo2state.decode(data)
-    print("   positionLSP    = %s" % str(msg.state[9]))
-    print("   velocityLSP    = %s" % str(msg.state[9*2]))
+    msg = hubo_hubo2state.decode(data)
+    print("   positionLSP    = %s" % str(msg.state[10]))
+    print("   velocityLSP    = %s" % str(msg.state[10*2]))
 
     
 
