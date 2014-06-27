@@ -7,7 +7,12 @@ classdef HuboState < LCMCoordinateFrame
   end
   methods
     function obj = HuboState(r)
-      obj = obj@LCMCoordinateFrame('HuboState','lcmtypes.lcmt_hubo2state','x');
+      typecheck(r,'TimeSteppingRigidBodyManipulator');
+          
+      num_u = getNumStates(r);
+      dim = num_u;
+      
+      obj = obj@LCMCoordinateFrame('HuboState',dim,'x');
       if obj.robot_ptr == 0
         obj.robot_ptr = r;
       end

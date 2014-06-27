@@ -37,11 +37,16 @@ classdef HuboPlant < TimeSteppingRigidBodyManipulator
             
             v = obj.constructVisualizer();
             while true
-                [x,t] = obj.getOutputFrame().getNextMessage(1000)
-                v.draw(t,x)
-                obj.getInputFrame()
-                pause(0.1)
+                [x,t] = obj.getOutputFrame().getNextMessage(1000);
+                v.draw(t,x);
+                obj.getInputFrame();
+                pause(0.1);
             end
+        end
+        function x = remoteControl(obj)
+            v = obj.constructVisualizer();
+            i = v.inspector();
+            
         end
     end
 end

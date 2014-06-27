@@ -9,13 +9,15 @@ import hubo_ach as ha
 import time
 import ach
 
-from lcmtypes import lcmt_hubo2state as lcmt
+from lcmtypes import hubo.hubo_hubo2state
 
 
 
 def my_handler(channel, data):
-    msg = lcmt.lcmt_hubo2state.decode(data)
-    print("   positionLSP    = %s" % str(msg.LSP))
+    msg = hubo.hubo_hubo2state.decode(data)
+    print("   positionLSP    = %s" % str(msg.state[9]))
+    print("   velocityLSP    = %s" % str(msg.state[9*2]))
+
     
 
 lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=2")

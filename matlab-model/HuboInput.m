@@ -8,7 +8,12 @@ classdef HuboInput < LCMCoordinateFrame
     end
     methods
         function obj = HuboInput(r)
-          obj = obj@LCMCoordinateFrame('HuboRef','lcmtypes.lcmt_hubo2state','x');
+          typecheck(r,'TimeSteppingRigidBodyManipulator');
+          
+          num_u = getNumInputs(r);
+          dim = num_u;
+          
+          obj = obj@LCMCoordinateFrame('HuboRef',dim,'x');
           if obj.robot_ptr == 0
             obj.robot_ptr = r;
           end
