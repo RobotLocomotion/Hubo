@@ -1,67 +1,37 @@
 StateFrame:
   base_x
   base_y
-  base_z
+  base_z = -0.04
   base_roll
   base_pitch
   base_yaw
   NeckYaw
   Neck1
   Neck2
-  LeftShoulderPitch
-  LeftShoulderRoll
+  LeftShoulderPitch = 0.3
+  LeftShoulderRoll = 0.2
   LeftShoulderYaw
-  LeftElbowPitch
+  LeftElbowPitch = -0.7
   LeftWristYaw
   LeftWristPitch
-  LeftFinger1
-  leftThumbKnuckle2
-  leftThumbKnuckle3
-  LeftFinger5
-  leftPinkyKnuckle2
-  leftPinkyKnuckle3
-  LeftFinger4
-  leftRingKnuckle2
-  leftRingKnuckle3
-  LeftFinger3
-  leftMiddleKnuckle2
-  leftMiddleKnuckle3
-  LeftFinger2
-  leftIndexKnuckle2
-  leftIndexKnuckle3
-  RightShoulderPitch
-  RightShoulderRoll
+  RightShoulderPitch = 0.3
+  RightShoulderRoll = -0.2
   RightShoulderYaw
-  RightElbowPitch
+  RightElbowPitch = -0.7
   RightWristYaw
   RightWristPitch
-  RightFinger1
-  rightThumbKnuckle2
-  rightThumbKnuckle3
-  RightFinger5
-  rightPinkyKnuckle2
-  rightPinkyKnuckle3
-  RightFinger4
-  rightRingKnuckle2
-  rightRingKnuckle3
-  RightFinger3
-  rightMiddleKnuckle2
-  rightMiddleKnuckle3
-  RightFinger2
-  rightIndexKnuckle2
-  rightIndexKnuckle3
   TrunkYaw
   LeftHipYaw
   LeftHipRoll
-  LeftHipPitch
-  LeftKneePitch
-  LeftAnklePitch
+  LeftHipPitch = -0.3
+  LeftKneePitch = 0.6
+  LeftAnklePitch = -0.3
   LeftAnkleRoll
   RightHipYaw
   RightHipRoll
-  RightHipPitch
-  RightKneePitch
-  RightAnklePitch
+  RightHipPitch = -0.3
+  RightKneePitch = 0.6 
+  RightAnklePitch = -0.3
   RightAnkleRoll
   base_xdot
   base_ydot
@@ -78,42 +48,12 @@ StateFrame:
   LeftElbowPitchdot
   LeftWristYawdot
   LeftWristPitchdot
-  LeftFinger1dot
-  leftThumbKnuckle2dot
-  leftThumbKnuckle3dot
-  LeftFinger5dot
-  leftPinkyKnuckle2dot
-  leftPinkyKnuckle3dot
-  LeftFinger4dot
-  leftRingKnuckle2dot
-  leftRingKnuckle3dot
-  LeftFinger3dot
-  leftMiddleKnuckle2dot
-  leftMiddleKnuckle3dot
-  LeftFinger2dot
-  leftIndexKnuckle2dot
-  leftIndexKnuckle3dot
   RightShoulderPitchdot
   RightShoulderRolldot
   RightShoulderYawdot
   RightElbowPitchdot
   RightWristYawdot
   RightWristPitchdot
-  RightFinger1dot
-  rightThumbKnuckle2dot
-  rightThumbKnuckle3dot
-  RightFinger5dot
-  rightPinkyKnuckle2dot
-  rightPinkyKnuckle3dot
-  RightFinger4dot
-  rightRingKnuckle2dot
-  rightRingKnuckle3dot
-  RightFinger3dot
-  rightMiddleKnuckle2dot
-  rightMiddleKnuckle3dot
-  RightFinger2dot
-  rightIndexKnuckle2dot
-  rightIndexKnuckle3dot
   TrunkYawdot
   LeftHipYawdot
   LeftHipRolldot
@@ -127,3 +67,43 @@ StateFrame:
   RightKneePitchdot
   RightAnklePitchdot
   RightAnkleRolldot
+
+InputFrame:
+  NeckYaw_motor
+  Neck1_motor
+  Neck2_motor
+  LeftShoulderPitch_motor
+  LeftShoulderRoll_motor
+  LeftShoudlerYaw_motor
+  LeftElbowPitch_motor
+  LeftWristYaw_motor
+  LeftWristPitch_motor
+  LeftFinger1_motor
+  LeftFinger5_motor
+  LeftFinger4_motor
+  LeftFinger3_motor
+  LeftFinger2_motor
+  RightShoulderPitch_motor
+  RightShoulderRoll_motor
+  RightShoulderYaw_motor
+  RightElbowPitch_motor
+  RightWristYaw_motor
+  RightWristPitch_motor
+  RightFinger1_motor
+  RightFinger5_motor
+  RightFinger4_motor
+  RightFinger3_motor
+  RightFinger2_motor
+  TrunkYaw_motor
+  LeftHipYaw_motor
+  LeftHipRoll_motor
+  LeftHipPitch_motor
+  LeftKneePitch_motor
+  LeftAnklePitch_motor
+  LeftAnkleRoll_motor
+  RightHipYaw_motor
+  RightHipRoll_motor
+  RightHipPitch_motor
+  RightKneePitch_motor
+  RightAnklePitch_motor
+  RightAnkleRoll_motor

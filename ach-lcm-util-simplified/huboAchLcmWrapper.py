@@ -14,8 +14,7 @@ from ctypes import *
 import threading 
 #Import LCM Messages
 from lcmtypes import hubo_hubo2state
-
-
+from lcmtypes import hubo_hubo2input
 
 
 #Message Conversion
@@ -38,7 +37,48 @@ def convertLCM_Matlab(x):
     return msg
 
 def convertACH_Command(msg, ref):
-    ref.LSP = msg.LSP
+    ref.NKY = msg.joint[0]
+    ref.NK1 = msg.joint[1]
+    ref.NK2 = msg.joint[2]
+
+    ref.LSP = msg.joint[3]
+    ref.LSR = msg.joint[4]
+    ref.LSY = msg.joint[5]
+    ref.LEP = msg.joint[6]
+    ref.LWY = msg.joint[7]
+    ref.LWP = msg.joint[8]
+    ref.LF1 = msg.joint[9]
+    ref.LF5 = msg.joint[10]
+    ref.LF4 = msg.joint[11]
+    ref.LF3 = msg.joint[12]
+    ref.LF2 = msg.joint[13]
+
+    ref.RSP = msg.joint[14]
+    ref.RSR = msg.joint[15]
+    ref.RSY = msg.joint[16]
+    ref.REP = msg.joint[17]
+    ref.RWY = msg.joint[18]
+    ref.RWP = msg.joint[19]
+    ref.RF1 = msg.joint[20]
+    ref.RF5 = msg.joint[21]
+    ref.RF4 = msg.joint[22]
+    ref.RF3 = msg.joint[23]
+    ref.RF2 = msg.joint[24]
+
+    ref.WST = msg.joint[25]
+    ref.LHY = msg.joint[26]
+    ref.LHR = msg.joint[27]
+    ref.LHP = msg.joint[28]
+    ref.LKN = msg.joint[29]
+    ref.LAP = msg.joint[30]
+    ref.LAR = msg.joint[31]
+
+    ref.RHY = msg.joint[32]
+    ref.RHR = msg.joint[33]
+    ref.RHP = msg.joint[34]
+    ref.RKN = msg.joint[35]
+    ref.RAP = msg.joint[36]
+    ref.RAR = msg.joint[37]
     print ref.LSP
 
 class huboLCMWrapper:
@@ -48,13 +88,13 @@ class huboLCMWrapper:
         self.ref = ha.HUBO_REF()
         self.stateChan = ach.Channel(ha.HUBO_CHAN_STATE_NAME)
         self.refChan = ach.Channel(ha.HUBO_CHAN_REF_NAME)
-        self.lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
+        self.lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=2")
         self.stateChan.flush()
         self.refChan.flush()
         self.subscription = self.lc.subscribe("HuboRef",self.command_handler)
         
     def command_handler(self,channel,data):
-        msg = lcmt.lcmt_hubo2state.encode(data)
+        msg = hbuo_hubo2input.encode(data)
         convertACH_Command(msg,self.ref)
         self.refChan.put(self.ref)
     def broadcast_state(self):
