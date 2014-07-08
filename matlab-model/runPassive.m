@@ -9,7 +9,7 @@ warning('on','Drake:RigidBodyManipulator:UnsupportedJointLimits');
 warning('on','Drake:RigidBodyManipulator:BodyHasZeroInertia');
 warning('on','Drake:RigidBodyManipulator:UnsupportedVelocityLimits');
 warning('on','Drake:RigidBodyGeometry:SimplifiedCollisionGeometry');
-r = TimeSteppingRigidBodyManipulator('urdf/hubo_base_link.urdf',0.001,options);
+r = TimeSteppingRigidBodyManipulator('urdf/hubo_minimal_contact.urdf',0.001,options);
 warning(w);
 
 r = setSimulinkParam(r,'MinStep','0.001');

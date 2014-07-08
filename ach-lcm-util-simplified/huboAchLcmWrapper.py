@@ -13,135 +13,74 @@ import time
 from ctypes import *
 import threading 
 #Import LCM Messages
-from lcmtypes import lcmt_hubo2state as lcmt
+from lcmtypes import hubo_hubo2state
+from lcmtypes import hubo_hubo2input
 
 
 
 
 #Message Conversion
 def convertLCM_Matlab(x):
-    msg = lcmt.lcmt_hubo2state()
+    NUM_JOINT = 40
+    msg = hubo_hubo2state()
     msg.timestamp =  time.time()
-    
-    #Baselink state not included
-    msg.NKY = x.joint[ha.NKY].pos
-    msg.NKYdot = x.joint[ha.NKY].vel
-#
-#    msg.HNP = x.joint[ha.HNP].pos
-#    msg.HNPdot = x.joint[ha.HNP].vel
-#
-#    msg.HNR = x.joint[ha.HNR].pos
-#    msg.HNRdot = x.joint[ha.HNR].vel
-#
-    msg.LSP = x.joint[ha.LSP].pos
-    msg.LSPdot = x.joint[ha.LSP].vel
-
-    msg.LSR = x.joint[ha.LSR].pos
-    msg.LSRdot = x.joint[ha.LSR].vel
-
-    msg.LSY = x.joint[ha.LSY].pos
-    msg.LSYdot = x.joint[ha.LSY].vel
-
-    msg.LEB = x.joint[ha.LEB].pos
-    msg.LEBdot = x.joint[ha.LEB].vel
-
-    msg.LWY = x.joint[ha.LWY].pos
-    msg.LWYdot = x.joint[ha.LWY].vel
-
-    msg.LWP = x.joint[ha.LWP].pos
-    msg.LWPdot = x.joint[ha.LWP].vel
-
-    msg.RSP = x.joint[ha.RSP].pos
-    msg.RSPdot = x.joint[ha.RSP].vel
-
-    msg.RSR = x.joint[ha.RSR].pos
-    msg.RSRdot = x.joint[ha.RSR].vel
-
-    msg.RSY = x.joint[ha.RSY].pos
-    msg.RSYdot = x.joint[ha.RSY].vel
-
-    msg.REB = x.joint[ha.REB].pos
-    msg.REBdot = x.joint[ha.REB].vel
-
-    msg.RWY = x.joint[ha.RWY].pos
-    msg.RWYdot = x.joint[ha.RWY].vel
-
-    msg.RWP = x.joint[ha.RWP].pos
-    msg.RWPdot = x.joint[ha.RWP].vel
-
-    msg.leftThumbKnuckle3 = x.joint[ha.LF1].pos
-    msg.leftThumbKnuckle3dot = x.joint[ha.LF1].vel
-
-    msg.leftIndexKnuckle3 = x.joint[ha.LF2].pos
-    msg.leftIndexKnuckle3dot = x.joint[ha.LF2].vel
-
-    msg.leftMiddleKnuckle3 = x.joint[ha.LF3].pos
-    msg.leftMiddleKnuckle3dot = x.joint[ha.LF3].vel
-
-    msg.leftRingKnuckle3 = x.joint[ha.LF4].pos
-    msg.leftRingKnuckle3dot = x.joint[ha.LF4].vel
-
-    msg.leftPinkyKnuckle3 = x.joint[ha.LF5].pos
-    msg.leftPinkyKnuckle3dot = x.joint[ha.LF5].vel
-
-    msg.rightThumbKnuckle3 = x.joint[ha.RF1].pos
-    msg.rightThumbKnuckle3dot = x.joint[ha.RF1].vel
-
-    msg.rightIndexKnuckle3 = x.joint[ha.RF2].pos
-    msg.rightIndexKnuckle3dot = x.joint[ha.RF2].vel
-
-    msg.rightMiddleKnuckle3 = x.joint[ha.RF3].pos
-    msg.rightMiddleKnuckle3dot = x.joint[ha.RF3].vel
-
-    msg.rightRingKnuckle3 = x.joint[ha.RF4].pos
-    msg.rightRingKnuckle3dot = x.joint[ha.RF4].vel
-
-    msg.rightPinkyKnuckle3 = x.joint[ha.RF5].pos
-    msg.rightPinkyKnuckle3dot = x.joint[ha.RF5].vel
-
-    msg.WST = x.joint[ha.WST].pos
-    msg.WSTdot = x.joint[ha.WST].vel
-
-
-    msg.LHY = x.joint[ha.LHY].pos
-    msg.LHYdot = x.joint[ha.LHY].vel
-
-    msg.LHR = x.joint[ha.LHR].pos
-    msg.LHRdot = x.joint[ha.LHR].vel
-
-    msg.LHP = x.joint[ha.LHP].pos
-    msg.LHPdot = x.joint[ha.LHP].vel
-
-    msg.LKN = x.joint[ha.LKN].pos
-    msg.LKNdot = x.joint[ha.LKN].vel
-
-    msg.LAP = x.joint[ha.LAP].pos
-    msg.LAPdot = x.joint[ha.LAP].vel
-
-    msg.LAR = x.joint[ha.LAR].pos
-    msg.LARdot = x.joint[ha.LAR].vel
-
-    msg.RHY = x.joint[ha.RHY].pos
-    msg.RHYdot = x.joint[ha.RHY].vel
-
-    msg.RHR = x.joint[ha.RHR].pos
-    msg.RHRdot = x.joint[ha.RHR].vel
-
-    msg.RHP = x.joint[ha.RHP].pos
-    msg.RHPdot = x.joint[ha.RHP].vel
-
-    msg.RKN = x.joint[ha.RKN].pos
-    msg.RKNdot = x.joint[ha.RKN].vel
-
-    msg.RAP = x.joint[ha.RAP].pos
-    msg.RAPdot = x.joint[ha.RAP].vel
-    msg.RAR = x.joint[ha.RAR].pos
-    msg.RARdot = x.joint[ha.RAR].vel
-
+    msg.state = [0,0,0,0,0,0] #Basic Link Position
+    msg.state += [x.joint[i].pos for i in range(NUM_JOINT)] #Moter joints positions
+    msg.state += [0,0,0,0,0,0] #Basic Link Velocities
+    msg.state += [x.joint[i].vel for i in range(NUM_JOINT)] #Motor joint velocity
+    #Retroactively adding passive finger joints and their velocity
+    FINGER_JOINTPOS = [17,38] #Left and Right hand.
+    FINGER_JOINTPOS = [[FINGER_JOINTPOS[hand] +2*finger for finger in range(5) ] for hand in range(2)]#Populate 5 fingers
+    FINGER_JOINTPOS = FINGER_JOINTPOS[0] + FINGER_JOINTPOS[1]
+    FINGER_JOINTPOS += [FINGER_JOINTPOS[finger] +1 for finger in range(len(FINGER_JOINTPOS))]#Populate 2 knuckles for each finger
+    FINGER_JOINTPOS += [2*knuckles for knuckles in FINGER_JOINTPOS] #add velocity
+    FINGER_JOINTPOS.sort()
+    [msg.state.insert(knuckle, 0) for knuckle in FINGER_JOINTPOS] #Insert zero for the passive knuckles   position + Velocity
     return msg
 
 def convertACH_Command(msg, ref):
-    ref.LSP = msg.LSP
+    ref.NKY = msg.joint[0]
+    ref.NK1 = msg.joint[1]
+    ref.NK2 = msg.joint[2]
+
+    ref.LSP = msg.joint[3]
+    ref.LSR = msg.joint[4]
+    ref.LSY = msg.joint[5]
+    ref.LEP = msg.joint[6]
+    ref.LWY = msg.joint[7]
+    ref.LWP = msg.joint[8]
+    ref.LF1 = msg.joint[9]
+    ref.LF5 = msg.joint[10]
+    ref.LF4 = msg.joint[11]
+    ref.LF3 = msg.joint[12]
+    ref.LF2 = msg.joint[13]
+
+    ref.RSP = msg.joint[14]
+    ref.RSR = msg.joint[15]
+    ref.RSY = msg.joint[16]
+    ref.REP = msg.joint[17]
+    ref.RWY = msg.joint[18]
+    ref.RWP = msg.joint[19]
+    ref.RF1 = msg.joint[20]
+    ref.RF5 = msg.joint[21]
+    ref.RF4 = msg.joint[22]
+    ref.RF3 = msg.joint[23]
+    ref.RF2 = msg.joint[24]
+
+    ref.WST = msg.joint[25]
+    ref.LHY = msg.joint[26]
+    ref.LHR = msg.joint[27]
+    ref.LHP = msg.joint[28]
+    ref.LKN = msg.joint[29]
+    ref.LAP = msg.joint[30]
+    ref.LAR = msg.joint[31]
+
+    ref.RHY = msg.joint[32]
+    ref.RHR = msg.joint[33]
+    ref.RHP = msg.joint[34]
+    ref.RKN = msg.joint[35]
+    ref.RAP = msg.joint[36]
+    ref.RAR = msg.joint[37]
     print ref.LSP
 
 class huboLCMWrapper:
@@ -151,13 +90,13 @@ class huboLCMWrapper:
         self.ref = ha.HUBO_REF()
         self.stateChan = ach.Channel(ha.HUBO_CHAN_STATE_NAME)
         self.refChan = ach.Channel(ha.HUBO_CHAN_REF_NAME)
-        self.lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
+        self.lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=2")
         self.stateChan.flush()
         self.refChan.flush()
         self.subscription = self.lc.subscribe("HuboRef",self.command_handler)
         
     def command_handler(self,channel,data):
-        msg = lcmt.lcmt_hubo2state.encode(data)
+        msg = hbuo_hubo2input.encode(data)
         convertACH_Command(msg,self.ref)
         self.refChan.put(self.ref)
     def broadcast_state(self):

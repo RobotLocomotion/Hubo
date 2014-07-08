@@ -66,7 +66,7 @@
       <material name="Red"/>
     </visual>
   </link>
-  <link name="Body_LSP">
+  <link name="Body_LeftShoulderPitch">
     <inertial>
       <mass value="0.646655"/>
       <inertia ixx="0.000893731" ixy="-0.000156484" ixz="4.98007e-07" iyy="0.00093016" iyz="1.57095e-07" izz="0.00124323"/>
@@ -79,7 +79,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_LSR">
+  <link name="Body_LeftShoulderRoll">
     <inertial>
       <mass value="0.413368"/>
       <inertia ixx="0.000269283" ixy="4.52571e-07" ixz="3.23662e-06" iyy="0.00037679" iyz="9.93935e-07" izz="0.000360355"/>
@@ -92,7 +92,7 @@
       <material name="Red"/>
     </visual>
   </link>
-  <link name="Body_LSY">
+  <link name="Body_LeftShoulderYaw">
     <inertial>
       <mass value="1.15461"/>
       <inertia ixx="0.00365479" ixy="2.05436e-06" ixz="0.000418448" iyy="0.00364731" iyz="-3.09648e-05" izz="0.00060633"/>
@@ -105,7 +105,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_LEB">
+  <link name="Body_LeftElbowPitch">
     <inertial>
       <mass value="0.44094"/>
       <inertia ixx="0.0005027" ixy="3.64587e-06" ixz="-1.41388e-05" iyy="0.00049415" iyz="7.65528e-06" izz="0.000131786"/>
@@ -118,7 +118,7 @@
       <material name="Red"/>
     </visual>
   </link>
-  <link name="Body_LWY">
+  <link name="Body_LeftWristYaw">
     <inertial>
       <mass value="0.537738"/>
       <inertia ixx="0.00063457" ixy="-4.62486e-07" ixz="6.20682e-06" iyy="0.000563918" iyz="3.54044e-05" izz="0.000305422"/>
@@ -131,7 +131,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_LWP">
+  <link name="Body_LeftWristPitch">
     <inertial>
       <mass value="0.164393"/>
       <inertia ixx="9.74327e-05" ixy="-5.22155e-07" ixz="-1.17317e-06" iyy="0.000144494" iyz="9.4927e-06" izz="0.000122681"/>
@@ -143,7 +143,34 @@
       </geometry>
       <material name="Red"/>
     </visual>
+    <collision group="default">
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="knuckle">
+      <origin rpy="0 0 0" xyz="0 0 -0.1"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.1"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="Green"/>
+    </visual>
+
   </link>
+<!-- Left Hand Links
   <link name="leftThumbProximal">
     <inertial>
       <mass value="0.096"/>
@@ -339,7 +366,8 @@
       <material name="Blue"/>
     </visual>
   </link>
-  <link name="Body_RSP">
+-->
+  <link name="Body_RightShoulderPitch">
     <inertial>
       <mass value="0.646655"/>
       <inertia ixx="0.000893731" ixy="0.000156484" ixz="4.98007e-07" iyy="0.00093016" iyz="-1.57095e-07" izz="0.00124323"/>
@@ -352,7 +380,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_RSR">
+  <link name="Body_RightShoulderRoll">
     <inertial>
       <mass value="0.413368"/>
       <inertia ixx="0.000269283" ixy="-4.52571e-07" ixz="3.23662e-06" iyy="0.00037679" iyz="-9.93935e-07" izz="0.000360355"/>
@@ -365,7 +393,7 @@
       <material name="Red"/>
     </visual>
   </link>
-  <link name="Body_RSY">
+  <link name="Body_RightShoulderYaw">
     <inertial>
       <mass value="1.15461"/>
       <inertia ixx="0.00365479" ixy="-2.05436e-06" ixz="0.000418448" iyy="0.00364731" iyz="3.09648e-05" izz="0.00060633"/>
@@ -378,7 +406,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_REB">
+  <link name="Body_RightElbowPitch">
     <inertial>
       <mass value="0.44094"/>
       <inertia ixx="0.0005027" ixy="-3.64587e-06" ixz="-1.41388e-05" iyy="0.00049415" iyz="-7.65528e-06" izz="0.000131786"/>
@@ -391,7 +419,7 @@
       <material name="Red"/>
     </visual>
   </link>
-  <link name="Body_RWY">
+  <link name="Body_RightWristYaw">
     <inertial>
       <mass value="0.537738"/>
       <inertia ixx="0.00063457" ixy="4.62486e-07" ixz="6.20682e-06" iyy="0.000563918" iyz="-3.54044e-05" izz="0.000305422"/>
@@ -404,7 +432,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_RWP">
+  <link name="Body_RightWristPitch">
     <inertial>
       <mass value="0.164393"/>
       <inertia ixx="9.74327e-05" ixy="5.22155e-07" ixz="-1.17317e-06" iyy="0.000144494" iyz="-9.4927e-06" izz="0.000122681"/>
@@ -416,7 +444,34 @@
       </geometry>
       <material name="Red"/>
     </visual>
+    <collision group="default">
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="knuckle">
+      <origin rpy="0 0 0" xyz="0 0 -0.1"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.1"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="Green"/>
+    </visual>
   </link>
+
+<!-- Right Hand Links
   <link name="rightThumbProximal">
     <inertial>
       <mass value="0.096"/>
@@ -612,6 +667,7 @@
       <material name="Blue"/>
     </visual>
   </link>
+-->
   <link name="Body_Hip">
     <inertial>
       <mass value="3.41719"/>
@@ -624,8 +680,122 @@
       </geometry>
       <material name="Green"/>
     </visual>
+    <collision group="front">
+      <origin rpy="0 0 0" xyz="0.12 0.1 0.017"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.12 0.1 0.017"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="front">
+      <origin rpy="0 0 0" xyz="0.12 -0.1 0.017"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.12 -0.1 0.017"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="front">
+      <origin rpy="0 0 0" xyz="0.12 0.1 -0.033"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.12 0.1 -0.033"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="front">
+      <origin rpy="0 0 0" xyz="0.12 -0.1 -0.033"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.12 -0.1 -0.033"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="back">
+      <origin rpy="0 0 0" xyz="-0.12 0.1 0.017"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.12 0.1 0.017"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="back">
+      <origin rpy="0 0 0" xyz="-0.12 -0.1 0.017"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.12 -0.1 0.017"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="back">
+      <origin rpy="0 0 0" xyz="-0.12 0.1 -0.033"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.12 0.1 -0.033"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="back">
+      <origin rpy="0 0 0" xyz="-0.12 -0.1 -0.033"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.12 -0.1 -0.033"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="butt">
+      <origin rpy="0 0 0" xyz="-0.12 0.1 -0.05"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.12 0.1 -0.05"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision group="butt">
+      <origin rpy="0 0 0" xyz="-0.12 -0.1 -0.05"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
   </link>
-  <link name="Body_LHY">
+  <link name="Body_LeftHipYaw">
     <inertial>
       <mass value="0.826125"/>
       <inertia ixx="0.00151818" ixy="2.13586e-06" ixz="0.000434128" iyy="0.00286333" iyz="-1.57525e-07" izz="0.00211437"/>
@@ -638,7 +808,7 @@
       <material name="Blue"/>
     </visual>
   </link>
-  <link name="Body_LHR">
+  <link name="Body_LeftHipRoll">
     <inertial>
       <mass value="1.93266"/>
       <inertia ixx="0.00403487" ixy="7.9452e-05" ixz="-0.000125343" iyy="0.00332707" iyz="-0.000551964" izz="0.00317173"/>
@@ -651,7 +821,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_LHP">
+  <link name="Body_LeftHipPitch">
     <inertial>
       <mass value="2.8201"/>
       <inertia ixx="0.0295102" ixy="0.000184399" ixz="-0.000370291" iyy="0.0273771" iyz="0.00065658" izz="0.00838035"/>
@@ -663,8 +833,34 @@
       </geometry>
       <material name="Blue"/>
     </visual>
+    <!--Atlas' Collision-->
+    <collision group="hamstring">
+      <origin rpy="0 0 0" xyz="-0.04 -0.02085 -0.2"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.04 -0.02085 -0.2"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.05 -0.02085 -0.1"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision group="hamstring">
+      <origin rpy="0 0 0" xyz="-0.05 -0.02085 -0.1"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
   </link>
-  <link name="Body_LKN">
+  <link name="Body_LeftKneePitch">
     <inertial>
       <mass value="1.80912"/>
       <inertia ixx="0.0232156" ixy="0.000251648" ixz="-0.00129343" iyy="0.0208342" iyz="0.00278068" izz="0.0059204"/>
@@ -676,8 +872,21 @@
       </geometry>
       <material name="Green"/>
     </visual>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.07 -0.02 -0.01"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision group="knee">
+      <origin rpy="0 0 0" xyz="0.07 -0.02 -0.1"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
   </link>
-  <link name="Body_LAP">
+  <link name="Body_LeftAnklePitch">
     <inertial>
       <mass value="1.63501"/>
       <inertia ixx="0.00231659" ixy="1.87402e-05" ixz="0.000369899" iyy="0.00330411" iyz="6.38153e-05" izz="0.00279495"/>
@@ -690,7 +899,7 @@
       <material name="Blue"/>
     </visual>
   </link>
-  <link name="Body_LAR">
+  <link name="Body_LeftAnkleRoll">
     <inertial>
       <mass value="1.20318"/>
       <inertia ixx="0.00295183" ixy="3.23211e-05" ixz="0.000141769" iyy="0.00524792" iyz="5.95404e-05" izz="0.00516817"/>
@@ -702,34 +911,61 @@
       </geometry>
       <material name="Green"/>
     </visual>
-<!--Warning using Altas foot pattern for collision (Temporary)-->
+    <visual group="heel">
+      <origin rpy="0 0 0" xyz="-0.1125 0.0725 -0.101119"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name= "Blue"/>
+    </visual>
+    <visual group="heel">
+      <origin rpy="0 0 0" xyz="-0.1125 -0.0725 -0.101119"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name= "Blue"/>
+    </visual>
+    <visual group="toe">
+      <origin rpy="0 0 0" xyz="0.0325 0.0725 -0.101119"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name= "Blue"/>
+    </visual>
+    <visual group="toe">
+      <origin rpy="0 0 0" xyz="0.0325 -0.0725 -0.101119"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name= "Blue"/>
+    </visual>
     <collision group="heel">
-      <origin rpy="0 0 0" xyz="-0.082 0.0624435 -0.081119"/>
+      <origin rpy="0 0 0" xyz="-0.1125 0.0725 -0.101119"/>
       <geometry>
         <sphere radius="0"/>
       </geometry>
     </collision>
     <collision group="heel">
-      <origin rpy="0 0 0" xyz="-0.082 -0.0624435 -0.081119"/>
+      <origin rpy="0 0 0" xyz="-0.1125 -0.0725 -0.101119"/>
       <geometry>
         <sphere radius="0"/>
       </geometry>
     </collision>
     <collision group="toe">
-      <origin rpy="0 0 0" xyz="0.178 0.0624435 -0.081119"/>
+      <origin rpy="0 0 0" xyz="0.0325 0.0725 -0.101119"/>
       <geometry>
         <sphere radius="0"/>
       </geometry>
     </collision>
     <collision group="toe">
-      <origin rpy="0 0 0" xyz="0.178 -0.0624435 -0.081119"/>
+      <origin rpy="0 0 0" xyz="0.0325 -0.0725 -0.101119"/>
       <geometry>
         <sphere radius="0"/>
       </geometry>
     </collision>
-
+  <frame link="Body_LeftAnkleRoll" name="l_foot_sole" rpy="0 0 0" xyz="-0.04 0 -0.101119"/>
   </link>
-  <link name="Body_RHY">
+  <link name="Body_RightHipYaw">
     <inertial>
       <mass value="0.826125"/>
       <inertia ixx="0.00151818" ixy="-2.13586e-06" ixz="0.000434128" iyy="0.00286333" iyz="1.57525e-07" izz="0.00211437"/>
@@ -742,7 +978,7 @@
       <material name="Blue"/>
     </visual>
   </link>
-  <link name="Body_RHR">
+  <link name="Body_RightHipRoll">
     <inertial>
       <mass value="1.93266"/>
       <inertia ixx="0.00403487" ixy="-7.9452e-05" ixz="-0.000125343" iyy="0.00332707" iyz="0.000551964" izz="0.00317173"/>
@@ -755,7 +991,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_RHP">
+  <link name="Body_RightHipPitch">
     <inertial>
       <mass value="2.8201"/>
       <inertia ixx="0.0295102" ixy="-0.000184399" ixz="-0.000370291" iyy="0.0273771" iyz="-0.00065658" izz="0.00838035"/>
@@ -767,8 +1003,33 @@
       </geometry>
       <material name="Blue"/>
     </visual>
+    <collision group="hamstring">
+      <origin rpy="0 0 0" xyz="-0.04 0.02085 -0.2"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.04 0.02085 -0.2"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.05 0.02085 -0.1"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision group="hamstring">
+      <origin rpy="0 0 0" xyz="-0.05 0.02085 -0.1"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
   </link>
-  <link name="Body_RKN">
+  <link name="Body_RightKneePitch">
     <inertial>
       <mass value="1.80912"/>
       <inertia ixx="0.0232156" ixy="-0.000251648" ixz="-0.00129343" iyy="0.0208342" iyz="-0.00278068" izz="0.0059204"/>
@@ -781,7 +1042,7 @@
       <material name="Green"/>
     </visual>
   </link>
-  <link name="Body_RAP">
+  <link name="Body_RightAnklePitch">
     <inertial>
       <mass value="1.63501"/>
       <inertia ixx="0.00231659" ixy="-1.87402e-05" ixz="0.000369899" iyy="0.00330411" iyz="-6.38153e-05" izz="0.00279495"/>
@@ -793,8 +1054,14 @@
       </geometry>
       <material name="Blue"/>
     </visual>
+    <collision group="knee">
+      <origin rpy="0 0 0" xyz="-0.07 -0.02 -0.01"/>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
   </link>
-  <link name="Body_RAR">
+  <link name="Body_RightAnkleRoll">
     <inertial>
       <mass value="1.20318"/>
       <inertia ixx="0.00295183" ixy="-3.23211e-05" ixz="0.000141769" iyy="0.00524792" iyz="-5.95404e-05" izz="0.00516817"/>
@@ -806,102 +1073,163 @@
       </geometry>
       <material name="Green"/>
     </visual>
-<!--Warning using Altas foot pattern for collision (Temporary)-->
     <collision group="heel">
-      <origin rpy="0 0 0" xyz="-0.082 0.0624435 -0.081119"/>
+      <origin rpy="0 0 0" xyz="-0.1125 0.0725 -0.101119"/>
       <geometry>
         <sphere radius="0"/>
       </geometry>
     </collision>
     <collision group="heel">
-      <origin rpy="0 0 0" xyz="-0.082 -0.0624435 -0.081119"/>
+      <origin rpy="0 0 0" xyz="-0.1125 -0.0725 -0.101119"/>
       <geometry>
         <sphere radius="0"/>
       </geometry>
     </collision>
     <collision group="toe">
-      <origin rpy="0 0 0" xyz="0.178 0.0624435 -0.081119"/>
+      <origin rpy="0 0 0" xyz="0.0325 0.0725 -0.101119"/>
       <geometry>
         <sphere radius="0"/>
       </geometry>
     </collision>
     <collision group="toe">
-      <origin rpy="0 0 0" xyz="0.178 -0.0624435 -0.081119"/>
+      <origin rpy="0 0 0" xyz="0.0325 -0.0725 -0.101119"/>
       <geometry>
         <sphere radius="0"/>
       </geometry>
     </collision>
   </link>
-  <joint name="NKY" type="revolute">
+  <frame link="Body_RightAnkleRoll" name="r_foot_sole" rpy="0 0 0" xyz="-0.04 0 -0.101119"/>
+<!--Begin Joints-->
+  <joint name="NeckYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0137246 0.0 1.1092625"/>
     <parent link="Body_Torso"/>
     <child link="Body_Neck"/>
     <axis xyz="0 0 1"/>
     <limit effort="10.0" lower="-1.5" upper="1.5" velocity="1.0"/>
   </joint>
-  <joint name="HNP" type="revolute">
+  <transmission name="NeckYaw_trans" type="SimpleTransmission">
+    <actuator name="NeckYaw_motor" />
+    <joint name="NeckYaw" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="Neck1" type="revolute">
     <origin rpy="0 -0 0" xyz="-0.0014665 0.0024526 0.0876725"/>
     <parent link="Body_Neck"/>
     <child link="Body_Head_Empty"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-0.523599" upper="0.523599" velocity="1.0"/>
   </joint>
-  <joint name="HNR" type="revolute">
+  <transmission name="Neck1_trans" type="SimpleTransmission">
+    <actuator name="Neck1_motor" />
+    <joint name="Neck1" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="Neck2" type="revolute">
     <origin rpy="0 -0 0" xyz="0 0 0"/>
     <parent link="Body_Head_Empty"/>
     <child link="Body_Head"/>
     <axis xyz="1 0 0"/>
     <limit effort="10.0" lower="-0.523599" upper="0.523599" velocity="1.0"/>
   </joint>
-  <joint name="LSP" type="revolute">
+  <transmission name="Neck2_trans" type="SimpleTransmission">
+    <actuator name="Neck2_motor" />
+    <joint name="Neck2" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftShoulderPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0122581 0.143973 1.0486356"/>
     <parent link="Body_Torso"/>
-    <child link="Body_LSP"/>
+    <child link="Body_LeftShoulderPitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-3.14158" upper="3.14158" velocity="1.0"/>
   </joint>
-  <joint name="LSR" type="revolute">
+  <transmission name="LeftShoulderPitch_trans" type="SimpleTransmission">
+    <actuator name="LeftShoulderPitch_motor" />
+    <joint name="LeftShoulderPitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftShoulderRoll" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0269 0.072 0"/>
-    <parent link="Body_LSP"/>
-    <child link="Body_LSR"/>
+    <parent link="Body_LeftShoulderPitch"/>
+    <child link="Body_LeftShoulderRoll"/>
     <axis xyz="1 0 0"/>
     <limit effort="10.0" lower="0" upper="3.14158" velocity="1.0"/>
   </joint>
-  <joint name="LSY" type="revolute">
+  <transmission name="LeftShoulderRoll_trans" type="SimpleTransmission">
+    <actuator name="LeftShoulderRoll_motor" />
+    <joint name="LeftShoulderRoll" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftShoulderYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="-0.0269 -0.000166249 -0.0245"/>
-    <parent link="Body_LSR"/>
-    <child link="Body_LSY"/>
+    <parent link="Body_LeftShoulderRoll"/>
+    <child link="Body_LeftShoulderYaw"/>
     <axis xyz="0 0 1"/>
     <limit effort="10.0" lower="-3.14158" upper="3.14158" velocity="1.0"/>
   </joint>
-  <joint name="LEB" type="revolute">
+  <transmission name="LeftShoulderYaw_trans" type="SimpleTransmission">
+    <actuator name="LeftShoudlerYaw_motor" />
+    <joint name="LeftShoulderYaw" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftElbowPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0219936 -0.018 -0.157505"/>
-    <parent link="Body_LSY"/>
-    <child link="Body_LEB"/>
+    <parent link="Body_LeftShoulderYaw"/>
+    <child link="Body_LeftElbowPitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-2.49582" upper="0.0698132" velocity="1.0"/>
   </joint>
-  <joint name="LWY" type="revolute">
+  <transmission name="LeftElbowPitch_trans" type="SimpleTransmission">
+    <actuator name="LeftElbowPitch_motor" />
+    <joint name="LeftElbowPitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftWristYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="-0.0219906 0.018 -0.111408"/>
-    <parent link="Body_LEB"/>
-    <child link="Body_LWY"/>
+    <parent link="Body_LeftElbowPitch"/>
+    <child link="Body_LeftWristYaw"/>
     <axis xyz="0 0 1"/>
     <limit effort="10.0" lower="-3.14158" upper="3.14158" velocity="1.0"/>
   </joint>
-  <joint name="LWP" type="revolute">
+  <transmission name="LeftWristYaw_trans" type="SimpleTransmission">
+    <actuator name="LeftWristYaw_motor" />
+    <joint name="LeftWristYaw" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftWristPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="1.72973e-06 -0.00872953 -0.05255"/>
-    <parent link="Body_LWY"/>
-    <child link="Body_LWP"/>
+    <parent link="Body_LeftWristYaw"/>
+    <child link="Body_LeftWristPitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-1.64061" upper="1.01229" velocity="1.0"/>
   </joint>
-  <joint name="leftThumbKnuckle1" type="revolute">
+  <transmission name="LeftWristPitch_trans" type="SimpleTransmission">
+    <actuator name="LeftWristPitch_motor" />
+    <joint name="LeftWristPitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+<!-- Left Hand Joints
+  <joint name="LeftFinger1" type="revolute">
     <origin rpy="1.5708 -0.785398 -1.5708" xyz="0.0208959 0.00192069 -0.060952"/>
-    <parent link="Body_LWP"/>
-    <child link="leftThumbProximal"/>
+    <parent link="Body_LeftWristPitch"/>
+    <child link="left
+Proximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
+  <transmission name="LeftFinger1_trans" type="SimpleTransmission">
+    <actuator name="LeftFinger1_motor" />
+    <joint name="LeftFinger1" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="leftThumbKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="leftThumbProximal"/>
@@ -916,13 +1244,19 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <joint name="leftPinkyKnuckle1" type="revolute">
+
+  <joint name="LeftFinger5" type="revolute">
     <origin rpy="1.5708 0.785398 1.5708" xyz="-0.0281041 0.0298617 -0.088883"/>
-    <parent link="Body_LWP"/>
+    <parent link="Body_LeftWristPitch"/>
     <child link="leftPinkyProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
+  <transmission name="LeftFinger5_trans" type="SimpleTransmission">
+    <actuator name="LeftFinger5_motor" />
+    <joint name="LeftFinger5" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="leftPinkyKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="leftPinkyProximal"/>
@@ -937,13 +1271,20 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <joint name="leftRingKnuckle1" type="revolute">
+
+  <joint name="LeftFinger4" type="revolute">
     <origin rpy="1.5708 0.785398 1.5708" xyz="-0.00910415 0.0298617 -0.088883"/>
-    <parent link="Body_LWP"/>
+    <parent link="Body_LeftWristPitch"/>
     <child link="leftRingProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
+  <transmission name="LeftFinger4_trans" type="SimpleTransmission">
+    <actuator name="LeftFinger4_motor" />
+    <joint name="LeftFinger4" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
   <joint name="leftRingKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="leftRingProximal"/>
@@ -958,13 +1299,19 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <joint name="leftMiddleKnuckle1" type="revolute">
+
+  <joint name="LeftFinger3" type="revolute">
     <origin rpy="1.5708 0.785398 1.5708" xyz="0.00993585 0.0298617 -0.088883"/>
-    <parent link="Body_LWP"/>
+    <parent link="Body_LeftWristPitch"/>
     <child link="leftMiddleProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
+  <transmission name="LeftFinger3_trans" type="SimpleTransmission">
+    <actuator name="LeftFinger3_motor" />
+    <joint name="LeftFinger3" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="leftMiddleKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="leftMiddleProximal"/>
@@ -979,13 +1326,19 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <joint name="leftIndexKnuckle1" type="revolute">
+
+  <joint name="LeftFinger2" type="revolute">
     <origin rpy="1.5708 0.785398 1.5708" xyz="0.0289159 0.0298617 -0.088883"/>
-    <parent link="Body_LWP"/>
+    <parent link="Body_LeftWristPitch"/>
     <child link="leftIndexProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
+  <transmission name="LeftFinger2_trans" type="SimpleTransmission">
+    <actuator name="LeftFinger2_motor" />
+    <joint name="LeftFinger2" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="leftIndexKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="leftIndexProximal"/>
@@ -1000,55 +1353,97 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <joint name="RSP" type="revolute">
+-->
+  <joint name="RightShoulderPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0122581 -0.139027 1.0486356"/>
     <parent link="Body_Torso"/>
-    <child link="Body_RSP"/>
+    <child link="Body_RightShoulderPitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-3.14158" upper="3.14158" velocity="1.0"/>
   </joint>
-  <joint name="RSR" type="revolute">
+  <transmission name="RightShoulderPitch_trans" type="SimpleTransmission">
+    <actuator name="RightShoulderPitch_motor" />
+    <joint name="RightShoulderPitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightShoulderRoll" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0269 -0.072 0"/>
-    <parent link="Body_RSP"/>
-    <child link="Body_RSR"/>
+    <parent link="Body_RightShoulderPitch"/>
+    <child link="Body_RightShoulderRoll"/>
     <axis xyz="1 0 0"/>
     <limit effort="10.0" lower="-3.14158" upper="0" velocity="1.0"/>
   </joint>
-  <joint name="RSY" type="revolute">
+  <transmission name="RightShoulderRoll_trans" type="SimpleTransmission">
+    <actuator name="RightShoulderRoll_motor" />
+    <joint name="RightShoulderRoll" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightShoulderYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="-0.0269 0 -0.0245"/>
-    <parent link="Body_RSR"/>
-    <child link="Body_RSY"/>
+    <parent link="Body_RightShoulderRoll"/>
+    <child link="Body_RightShoulderYaw"/>
     <axis xyz="0 0 1"/>
     <limit effort="10.0" lower="-3.14158" upper="3.14158" velocity="1.0"/>
   </joint>
-  <joint name="REB" type="revolute">
+  <transmission name="RightShoulderYaw_trans" type="SimpleTransmission">
+    <actuator name="RightShoulderYaw_motor" />
+    <joint name="RightShoulderYaw" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightElbowPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0219936 0.018 -0.157505"/>
-    <parent link="Body_RSY"/>
-    <child link="Body_REB"/>
+    <parent link="Body_RightShoulderYaw"/>
+    <child link="Body_RightElbowPitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-2.49582" upper="0.0698132" velocity="1.0"/>
   </joint>
-  <joint name="RWY" type="revolute">
+  <transmission name="RightElbowPitch_trans" type="SimpleTransmission">
+    <actuator name="RightElbowPitch_motor" />
+    <joint name="RightElbowPitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightWristYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="-0.0219906 -0.018 -0.111408"/>
-    <parent link="Body_REB"/>
-    <child link="Body_RWY"/>
+    <parent link="Body_RightElbowPitch"/>
+    <child link="Body_RightWristYaw"/>
     <axis xyz="0 0 1"/>
     <limit effort="10.0" lower="-3.14158" upper="3.14158" velocity="1.0"/>
   </joint>
-  <joint name="RWP" type="revolute">
+  <transmission name="RightWristYaw_trans" type="SimpleTransmission">
+    <actuator name="RightWristYaw_motor" />
+    <joint name="RightWristYaw" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightWristPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="1.72973e-06 0.01 -0.05255"/>
-    <parent link="Body_RWY"/>
-    <child link="Body_RWP"/>
+    <parent link="Body_RightWristYaw"/>
+    <child link="Body_RightWristPitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-1.64061" upper="1.01229" velocity="1.0"/>
   </joint>
-  <joint name="rightThumbKnuckle1" type="revolute">
+  <transmission name="RightWristPitch_trans" type="SimpleTransmission">
+    <actuator name="RightWristPitch_motor" />
+    <joint name="RightWristPitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+<!--Right Hand Joints
+  <joint name="RightFinger1" type="revolute">
     <origin rpy="1.5708 -0.785398 1.5708" xyz="0.0208959 -0.00192069 -0.060952"/>
-    <parent link="Body_RWP"/>
+    <parent link="Body_RightWristPitch"/>
     <child link="rightThumbProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
+  <transmission name="RightFinger1_trans" type="SimpleTransmission">
+    <actuator name="RightFinger1_motor" />
+    <joint name="RightFinger1" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="rightThumbKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="rightThumbProximal"/>
@@ -1063,13 +1458,19 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <joint name="rightPinkyKnuckle1" type="revolute">
+
+  <joint name="RightFinger5" type="revolute">
     <origin rpy="1.5708 0.785398 -1.5708" xyz="-0.0281041 -0.0298617 -0.088883"/>
-    <parent link="Body_RWP"/>
+    <parent link="Body_RightWristPitch"/>
     <child link="rightPinkyProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
+  <transmission name="RightFinger5_trans" type="SimpleTransmission">
+    <actuator name="RightFinger5_motor" />
+    <joint name="RightFinger5" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="rightPinkyKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="rightPinkyProximal"/>
@@ -1084,13 +1485,19 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <joint name="rightRingKnuckle1" type="revolute">
+
+  <joint name="RightFinger4" type="revolute">
     <origin rpy="1.5708 0.785398 -1.5708" xyz="-0.00910415 -0.0298617 -0.088883"/>
-    <parent link="Body_RWP"/>
+    <parent link="Body_RightWristPitch"/>
     <child link="rightRingProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
+  <transmission name="RightFinger4_trans" type="SimpleTransmission">
+    <actuator name="RightFinger4_motor" />
+    <joint name="RightFinger4" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="rightRingKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="rightRingProximal"/>
@@ -1105,13 +1512,19 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <joint name="rightMiddleKnuckle1" type="revolute">
+
+  <joint name="RightFinger3" type="revolute">
     <origin rpy="1.5708 0.785398 -1.5708" xyz="0.00993585 -0.0298617 -0.088883"/>
-    <parent link="Body_RWP"/>
+    <parent link="Body_RightWristPitch"/>
     <child link="rightMiddleProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
+  <transmission name="RightFinger3_trans" type="SimpleTransmission">
+    <actuator name="RightFinger3_motor" />
+    <joint name="RightFinger3" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="rightMiddleKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="rightMiddleProximal"/>
@@ -1126,13 +1539,19 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <joint name="rightIndexKnuckle1" type="revolute">
+
+  <joint name="RightFinger2" type="revolute">
     <origin rpy="1.5708 0.785398 -1.5708" xyz="0.0289159 -0.0298617 -0.088883"/>
-    <parent link="Body_RWP"/>
+    <parent link="Body_RightWristPitch"/>
     <child link="rightIndexProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
+  <transmission name="RightFinger2_trans" type="SimpleTransmission">
+    <actuator name="RightFinger2_motor" />
+    <joint name="RightFinger2" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
   <joint name="rightIndexKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
     <parent link="rightIndexProximal"/>
@@ -1147,161 +1566,179 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <joint name="WST" type="revolute">
+-->
+  <joint name="TrunkYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0122662 0.00245974 0.84738"/><!--0.15262"/>-->
     <parent link="Body_Torso"/>
     <child link="Body_Hip"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14158" upper="3.14158" velocity="1.0"/>
   </joint>
-  <joint name="LHY" type="revolute">
+  <transmission name="TrunkYaw_trans" type="SimpleTransmission">
+    <actuator name="TrunkYaw_motor" />
+    <joint name="TrunkYaw" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftHipYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="0.000125136 0.0885155 -0.0764689"/>
     <parent link="Body_Hip"/>
-    <child link="Body_LHY"/>
+    <child link="Body_LeftHipYaw"/>
     <axis xyz="0 0 1"/>
     <limit effort="10.0" lower="-1.5708" upper="1.5708" velocity="1.0"/>
   </joint>
-  <joint name="LHR" type="revolute">
+  <transmission name="LeftHipYaw_trans" type="SimpleTransmission">
+    <actuator name="LeftHipYaw_motor" />
+    <joint name="LeftHipYaw" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftHipRoll" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0520001 1.50498e-06 -0.091004"/>
-    <parent link="Body_LHY"/>
-    <child link="Body_LHR"/>
+    <parent link="Body_LeftHipYaw"/>
+    <child link="Body_LeftHipRoll"/>
     <axis xyz="1 0 0"/>
     <limit effort="10.0" lower="-0.488692" upper="0.488692" velocity="1.0"/>
   </joint>
-  <joint name="LHP" type="revolute">
+  <transmission name="LeftHipRoll_trans" type="SimpleTransmission">
+    <actuator name="LeftHipRoll_motor" />
+    <joint name="LeftHipRoll" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftHipPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="-0.0529074 0.0655748 9.99159e-05"/>
-    <parent link="Body_LHR"/>
-    <child link="Body_LHP"/>
+    <parent link="Body_LeftHipRoll"/>
+    <child link="Body_LeftHipPitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-1.48353" upper="1.6057" velocity="1.0"/>
   </joint>
-  <joint name="LKN" type="revolute">
+  <transmission name="LeftHipPitch_trans" type="SimpleTransmission">
+    <actuator name="LeftHipPitch_motor" />
+    <joint name="LeftHipPitch"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftKneePitch" type="revolute">
     <origin rpy="0 -0 0" xyz="0.000766364 -0.0445011 -0.280007"/>
-    <parent link="Body_LHP"/>
-    <child link="Body_LKN"/>
+    <parent link="Body_LeftHipPitch"/>
+    <child link="Body_LeftKneePitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-0.0698132" upper="2.60054" velocity="1.0"/>
   </joint>
-  <joint name="LAP" type="revolute">
+  <transmission name="LeftKneePitch_trans" type="SimpleTransmission">
+    <actuator name="LeftKneePitch_motor" />
+    <joint name="LeftKneePitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftAnklePitch" type="revolute">
     <origin rpy="0 -0 0" xyz="7.20248e-06 0.0247555 -0.279942"/>
-    <parent link="Body_LKN"/>
-    <child link="Body_LAP"/>
+    <parent link="Body_LeftKneePitch"/>
+    <child link="Body_LeftAnklePitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-1.29154" upper="1.69297" velocity="1.0"/>
   </joint>
-  <joint name="LAR" type="revolute">
+  <transmission name="LeftAnklePitch_trans" type="SimpleTransmission">
+    <actuator name="LeftAnklePitch_motor" />
+    <joint name="LeftAnklePitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="LeftAnkleRoll" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0711787 -0.0466006 -1.04e-10"/>
-    <parent link="Body_LAP"/>
-    <child link="Body_LAR"/>
+    <parent link="Body_LeftAnklePitch"/>
+    <child link="Body_LeftAnkleRoll"/>
     <axis xyz="1 0 0"/>
     <limit effort="10.0" lower="-0.191986" upper="0.191986" velocity="1.0"/>
   </joint>
-  <joint name="RHY" type="revolute">
+  <transmission name="LeftAnkleRoll_trans" type="SimpleTransmission">
+    <actuator name="LeftAnkleRoll_motor" />
+    <joint name="LeftAnkleRoll" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightHipYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="0.000125136 -0.0884999 -0.0764689"/>
     <parent link="Body_Hip"/>
-    <child link="Body_RHY"/>
+    <child link="Body_RightHipYaw"/>
     <axis xyz="0 0 1"/>
     <limit effort="10.0" lower="-1.5708" upper="1.5708" velocity="1.0"/>
   </joint>
-  <joint name="RHR" type="revolute">
+  <transmission name="RightHipYaw_trans" type="SimpleTransmission">
+    <actuator name="RightHipYaw_motor" />
+    <joint name="RightHipYaw" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightHipRoll" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0520001 7.3455e-05 -0.091004"/>
-    <parent link="Body_RHY"/>
-    <child link="Body_RHR"/>
+    <parent link="Body_RightHipYaw"/>
+    <child link="Body_RightHipRoll"/>
     <axis xyz="1 0 0"/>
     <limit effort="10.0" lower="-0.488692" upper="0.488692" velocity="1.0"/>
   </joint>
-  <joint name="RHP" type="revolute">
+  <transmission name="RightHipRoll_trans" type="SimpleTransmission">
+    <actuator name="RightHipRoll_motor" />
+    <joint name="RightHipRoll" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightHipPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="-0.0529074 -0.0655748 9.99159e-05"/>
-    <parent link="Body_RHR"/>
-    <child link="Body_RHP"/>
+    <parent link="Body_RightHipRoll"/>
+    <child link="Body_RightHipPitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-1.48353" upper="1.6057" velocity="1.0"/>
   </joint>
-  <joint name="RKN" type="revolute">
+  <transmission name="RightHipPitch_trans" type="SimpleTransmission">
+    <actuator name="RightHipPitch_motor" />
+    <joint name="RightHipPitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightKneePitch" type="revolute">
     <origin rpy="0 -0 0" xyz="0.000766364 0.0445011 -0.280007"/>
-    <parent link="Body_RHP"/>
-    <child link="Body_RKN"/>
+    <parent link="Body_RightHipPitch"/>
+    <child link="Body_RightKneePitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-0.0698132" upper="2.60054" velocity="1.0"/>
   </joint>
-  <joint name="RAP" type="revolute">
+  <transmission name="RightKneePitch_trans" type="SimpleTransmission">
+    <actuator name="RightKneePitch_motor" />
+    <joint name="RightKneePitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightAnklePitch" type="revolute">
     <origin rpy="0 -0 0" xyz="7.20248e-06 -0.0247555 -0.279942"/>
-    <parent link="Body_RKN"/>
-    <child link="Body_RAP"/>
+    <parent link="Body_RightKneePitch"/>
+    <child link="Body_RightAnklePitch"/>
     <axis xyz="0 1 0"/>
     <limit effort="10.0" lower="-1.29154" upper="1.69297" velocity="1.0"/>
   </joint>
-  <joint name="RAR" type="revolute">
+  <transmission name="RightAnklePitch_trans" type="SimpleTransmission">
+    <actuator name="RightAnklePitch_motor" />
+    <joint name="RightAnklePitch" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <joint name="RightAnkleRoll" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0711787 0.0466006 -1.04e-10"/>
-    <parent link="Body_RAP"/>
-    <child link="Body_RAR"/>
+    <parent link="Body_RightAnklePitch"/>
+    <child link="Body_RightAnkleRoll"/>
     <axis xyz="1 0 0"/>
     <limit effort="10.0" lower="-0.191986" upper="0.191986" velocity="1.0"/>
   </joint>
-  <gazebo>
-    <!-- robot model offset -->
+  <transmission name="RightAnkleRoll_trans" type="SimpleTransmission">
+    <actuator name="RightAnkleRoll_motor" />
+    <joint name="RightAnkleRoll" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+<!--  <gazebo>
+     robot model offset
     <pose>0 0 1 0 0 0</pose>
-  </gazebo>
-  <transmission name="LHY_trans" type="SimpleTransmission">
-    <actuator name="LHY_motor" />
-    <joint name="LHY" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="LHR_trans" type="SimpleTransmission">
-    <actuator name="LHR_motor" />
-    <joint name="LHR" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="LHP_trans" type="SimpleTransmission">
-    <actuator name="LHP_motor" />
-    <joint name="LHP" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="LKN_trans" type="SimpleTransmission">
-    <actuator name="LKN_motor" />
-    <joint name="LKN" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="LAP_trans" type="SimpleTransmission">
-    <actuator name="LAP_motor" />
-    <joint name="LAP" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="LAR_trans" type="SimpleTransmission">
-    <actuator name="LAR_motor" />
-    <joint name="LAR" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="RHY_trans" type="SimpleTransmission">
-    <actuator name="RHY_motor" />
-    <joint name="RHY" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-<transmission name="RHR_trans" type="SimpleTransmission">
-    <actuator name="RHR_motor" />
-    <joint name="RHR" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="RHP_trans" type="SimpleTransmission">
-    <actuator name="RHP_motor" />
-    <joint name="RHP" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="RKN_trans" type="SimpleTransmission">
-    <actuator name="RKN_motor" />
-    <joint name="RKN" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="RAP_trans" type="SimpleTransmission">
-    <actuator name="RAP_motor" />
-    <joint name="RAP" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <transmission name="RAR_trans" type="SimpleTransmission">
-    <actuator name="RAR_motor" />
-    <joint name="RAR" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
+  </gazebo> -->
 <!--  <gazebo>-->
 <!--    <plugin name="pid_joints" filename="libpid_joints.so" />  -->
 <!--    <plugin name="hubo_stand" filename="/usr/share/drcsim-1.3/models/hubo/plugins/libhubo_stand.so" /> -->
