@@ -1,0 +1,47 @@
+// Note: this file was automatically generated using the
+// CoordinateFrame.generateLCMType() method.
+package hubo;
+struct hubo_hubo2input
+{
+  int64_t timestamp;
+
+  double NeckYaw;
+  double Neck1;
+  double Neck2;
+  double LeftShoulderPitch;
+  double LeftShoulderRoll;
+  double LeftShoudlerYaw;
+  double LeftElbowPitch;
+  double LeftWristYaw;
+  double LeftWristPitch;
+  double LeftFinger1;
+  double LeftFinger2;
+  double LeftFinger3;
+  double LeftFinger4;
+  double LeftFinger5;
+  double RightShoulderPitch;
+  double RightShoulderRoll;
+  double RightShoulderYaw;
+  double RightElbowPitch;
+  double RightWristYaw;
+  double RightWristPitch;
+  double RightFinger1;
+  double RightFinger2;
+  double RightFinger3;
+  double RightFinger4;
+  double RightFinger5;
+  double TrunkYaw;
+  double LeftHipYaw;
+  double LeftHipRoll;
+  double LeftHipPitch;
+  double LeftKneePitch;
+  double LeftAnklePitch;
+  double LeftAnkleRoll;
+  double RightHipYaw;
+  double RightHipRoll;
+  double RightHipPitch;
+  double RightKneePitch;
+  double RightAnklePitch;
+  double RightAnkleRoll;
+}
+
