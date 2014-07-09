@@ -19,7 +19,7 @@ def my_handler(channel, data):
     print("   enabled     = %s" % str(msg.enabled))
     print("")
 
-lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=2")
+lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
 subscription = lc.subscribe("EXAMPLE", my_handler)
 
 try:

@@ -7,11 +7,86 @@ import cStringIO as StringIO
 import struct
 
 class hubo_hubo2state(object):
-    __slots__ = ["timestamp", "state"]
+    __slots__ = ["timestamp", "NeckYaw", "Neck1", "Neck2", "LeftShoulderPitch", "LeftShoulderRoll", "LeftShoulderYaw", "LeftElbowPitch", "LeftWristYaw", "LeftWristPitch", "LeftFinger1", "LeftFinger2", "LeftFinger3", "LeftFinger4", "LeftFinger5", "RightShoulderPitch", "RightShoulderRoll", "RightShoulderYaw", "RightElbowPitch", "RightWristYaw", "RightWristPitch", "RightFinger1", "RightFinger2", "RightFinger3", "RightFinger4", "RightFinger5", "TrunkYaw", "LeftHipYaw", "LeftHipRoll", "LeftHipPitch", "LeftKneePitch", "LeftAnklePitch", "LeftAnkleRoll", "RightHipYaw", "RightHipRoll", "RightHipPitch", "RightKneePitch", "RightAnklePitch", "RightAnkleRoll", "NeckYawdot", "Neck1dot", "Neck2dot", "LeftShoulderPitchdot", "LeftShoulderRolldot", "LeftShoulderYawdot", "LeftElbowPitchdot", "LeftWristYawdot", "LeftWristPitchdot", "LeftFinger1dot", "LeftFinger2dot", "LeftFinger3dot", "LeftFinger4dot", "LeftFinger5dot", "RightShoulderPitchdot", "RightShoulderRolldot", "RightShoulderYawdot", "RightElbowPitchdot", "RightWristYawdot", "RightWristPitchdot", "RightFinger1dot", "RightFinger2dot", "RightFinger3dot", "RightFinger4dot", "RightFinger5dot", "TrunkYawdot", "LeftHipYawdot", "LeftHipRolldot", "LeftHipPitchdot", "LeftKneePitchdot", "LeftAnklePitchdot", "LeftAnkleRolldot", "RightHipYawdot", "RightHipRolldot", "RightHipPitchdot", "RightKneePitchdot", "RightAnklePitchdot", "RightAnkleRolldot"]
 
     def __init__(self):
         self.timestamp = 0
-        self.state = [ 0.0 for dim0 in range(128) ]
+        self.NeckYaw = 0.0
+        self.Neck1 = 0.0
+        self.Neck2 = 0.0
+        self.LeftShoulderPitch = 0.0
+        self.LeftShoulderRoll = 0.0
+        self.LeftShoulderYaw = 0.0
+        self.LeftElbowPitch = 0.0
+        self.LeftWristYaw = 0.0
+        self.LeftWristPitch = 0.0
+        self.LeftFinger1 = 0.0
+        self.LeftFinger2 = 0.0
+        self.LeftFinger3 = 0.0
+        self.LeftFinger4 = 0.0
+        self.LeftFinger5 = 0.0
+        self.RightShoulderPitch = 0.0
+        self.RightShoulderRoll = 0.0
+        self.RightShoulderYaw = 0.0
+        self.RightElbowPitch = 0.0
+        self.RightWristYaw = 0.0
+        self.RightWristPitch = 0.0
+        self.RightFinger1 = 0.0
+        self.RightFinger2 = 0.0
+        self.RightFinger3 = 0.0
+        self.RightFinger4 = 0.0
+        self.RightFinger5 = 0.0
+        self.TrunkYaw = 0.0
+        self.LeftHipYaw = 0.0
+        self.LeftHipRoll = 0.0
+        self.LeftHipPitch = 0.0
+        self.LeftKneePitch = 0.0
+        self.LeftAnklePitch = 0.0
+        self.LeftAnkleRoll = 0.0
+        self.RightHipYaw = 0.0
+        self.RightHipRoll = 0.0
+        self.RightHipPitch = 0.0
+        self.RightKneePitch = 0.0
+        self.RightAnklePitch = 0.0
+        self.RightAnkleRoll = 0.0
+        self.NeckYawdot = 0.0
+        self.Neck1dot = 0.0
+        self.Neck2dot = 0.0
+        self.LeftShoulderPitchdot = 0.0
+        self.LeftShoulderRolldot = 0.0
+        self.LeftShoulderYawdot = 0.0
+        self.LeftElbowPitchdot = 0.0
+        self.LeftWristYawdot = 0.0
+        self.LeftWristPitchdot = 0.0
+        self.LeftFinger1dot = 0.0
+        self.LeftFinger2dot = 0.0
+        self.LeftFinger3dot = 0.0
+        self.LeftFinger4dot = 0.0
+        self.LeftFinger5dot = 0.0
+        self.RightShoulderPitchdot = 0.0
+        self.RightShoulderRolldot = 0.0
+        self.RightShoulderYawdot = 0.0
+        self.RightElbowPitchdot = 0.0
+        self.RightWristYawdot = 0.0
+        self.RightWristPitchdot = 0.0
+        self.RightFinger1dot = 0.0
+        self.RightFinger2dot = 0.0
+        self.RightFinger3dot = 0.0
+        self.RightFinger4dot = 0.0
+        self.RightFinger5dot = 0.0
+        self.TrunkYawdot = 0.0
+        self.LeftHipYawdot = 0.0
+        self.LeftHipRolldot = 0.0
+        self.LeftHipPitchdot = 0.0
+        self.LeftKneePitchdot = 0.0
+        self.LeftAnklePitchdot = 0.0
+        self.LeftAnkleRolldot = 0.0
+        self.RightHipYawdot = 0.0
+        self.RightHipRolldot = 0.0
+        self.RightHipPitchdot = 0.0
+        self.RightKneePitchdot = 0.0
+        self.RightAnklePitchdot = 0.0
+        self.RightAnkleRolldot = 0.0
 
     def encode(self):
         buf = StringIO.StringIO()
@@ -20,8 +95,7 @@ class hubo_hubo2state(object):
         return buf.getvalue()
 
     def _encode_one(self, buf):
-        buf.write(struct.pack(">q", self.timestamp))
-        buf.write(struct.pack('>128d', *self.state[:128]))
+        buf.write(struct.pack(">qdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", self.timestamp, self.NeckYaw, self.Neck1, self.Neck2, self.LeftShoulderPitch, self.LeftShoulderRoll, self.LeftShoulderYaw, self.LeftElbowPitch, self.LeftWristYaw, self.LeftWristPitch, self.LeftFinger1, self.LeftFinger2, self.LeftFinger3, self.LeftFinger4, self.LeftFinger5, self.RightShoulderPitch, self.RightShoulderRoll, self.RightShoulderYaw, self.RightElbowPitch, self.RightWristYaw, self.RightWristPitch, self.RightFinger1, self.RightFinger2, self.RightFinger3, self.RightFinger4, self.RightFinger5, self.TrunkYaw, self.LeftHipYaw, self.LeftHipRoll, self.LeftHipPitch, self.LeftKneePitch, self.LeftAnklePitch, self.LeftAnkleRoll, self.RightHipYaw, self.RightHipRoll, self.RightHipPitch, self.RightKneePitch, self.RightAnklePitch, self.RightAnkleRoll, self.NeckYawdot, self.Neck1dot, self.Neck2dot, self.LeftShoulderPitchdot, self.LeftShoulderRolldot, self.LeftShoulderYawdot, self.LeftElbowPitchdot, self.LeftWristYawdot, self.LeftWristPitchdot, self.LeftFinger1dot, self.LeftFinger2dot, self.LeftFinger3dot, self.LeftFinger4dot, self.LeftFinger5dot, self.RightShoulderPitchdot, self.RightShoulderRolldot, self.RightShoulderYawdot, self.RightElbowPitchdot, self.RightWristYawdot, self.RightWristPitchdot, self.RightFinger1dot, self.RightFinger2dot, self.RightFinger3dot, self.RightFinger4dot, self.RightFinger5dot, self.TrunkYawdot, self.LeftHipYawdot, self.LeftHipRolldot, self.LeftHipPitchdot, self.LeftKneePitchdot, self.LeftAnklePitchdot, self.LeftAnkleRolldot, self.RightHipYawdot, self.RightHipRolldot, self.RightHipPitchdot, self.RightKneePitchdot, self.RightAnklePitchdot, self.RightAnkleRolldot))
 
     def decode(data):
         if hasattr(data, 'read'):
@@ -35,15 +109,14 @@ class hubo_hubo2state(object):
 
     def _decode_one(buf):
         self = hubo_hubo2state()
-        self.timestamp = struct.unpack(">q", buf.read(8))[0]
-        self.state = struct.unpack('>128d', buf.read(1024))
+        self.timestamp, self.NeckYaw, self.Neck1, self.Neck2, self.LeftShoulderPitch, self.LeftShoulderRoll, self.LeftShoulderYaw, self.LeftElbowPitch, self.LeftWristYaw, self.LeftWristPitch, self.LeftFinger1, self.LeftFinger2, self.LeftFinger3, self.LeftFinger4, self.LeftFinger5, self.RightShoulderPitch, self.RightShoulderRoll, self.RightShoulderYaw, self.RightElbowPitch, self.RightWristYaw, self.RightWristPitch, self.RightFinger1, self.RightFinger2, self.RightFinger3, self.RightFinger4, self.RightFinger5, self.TrunkYaw, self.LeftHipYaw, self.LeftHipRoll, self.LeftHipPitch, self.LeftKneePitch, self.LeftAnklePitch, self.LeftAnkleRoll, self.RightHipYaw, self.RightHipRoll, self.RightHipPitch, self.RightKneePitch, self.RightAnklePitch, self.RightAnkleRoll, self.NeckYawdot, self.Neck1dot, self.Neck2dot, self.LeftShoulderPitchdot, self.LeftShoulderRolldot, self.LeftShoulderYawdot, self.LeftElbowPitchdot, self.LeftWristYawdot, self.LeftWristPitchdot, self.LeftFinger1dot, self.LeftFinger2dot, self.LeftFinger3dot, self.LeftFinger4dot, self.LeftFinger5dot, self.RightShoulderPitchdot, self.RightShoulderRolldot, self.RightShoulderYawdot, self.RightElbowPitchdot, self.RightWristYawdot, self.RightWristPitchdot, self.RightFinger1dot, self.RightFinger2dot, self.RightFinger3dot, self.RightFinger4dot, self.RightFinger5dot, self.TrunkYawdot, self.LeftHipYawdot, self.LeftHipRolldot, self.LeftHipPitchdot, self.LeftKneePitchdot, self.LeftAnklePitchdot, self.LeftAnkleRolldot, self.RightHipYawdot, self.RightHipRolldot, self.RightHipPitchdot, self.RightKneePitchdot, self.RightAnklePitchdot, self.RightAnkleRolldot = struct.unpack(">qdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", buf.read(616))
         return self
     _decode_one = staticmethod(_decode_one)
 
     _hash = None
     def _get_hash_recursive(parents):
         if hubo_hubo2state in parents: return 0
-        tmphash = (0xfd10b9fd9fa32680) & 0xffffffffffffffff
+        tmphash = (0xfeac80fbc19fba3e) & 0xffffffffffffffff
         tmphash  = (((tmphash<<1)&0xffffffffffffffff)  + (tmphash>>63)) & 0xffffffffffffffff
         return tmphash
     _get_hash_recursive = staticmethod(_get_hash_recursive)
