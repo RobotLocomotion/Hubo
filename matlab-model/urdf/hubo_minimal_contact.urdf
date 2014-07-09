@@ -1245,57 +1245,29 @@ Proximal"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
 
-  <joint name="LeftFinger5" type="revolute">
-    <origin rpy="1.5708 0.785398 1.5708" xyz="-0.0281041 0.0298617 -0.088883"/>
+  <joint name="LeftFinger2" type="revolute">
+    <origin rpy="1.5708 0.785398 1.5708" xyz="0.0289159 0.0298617 -0.088883"/>
     <parent link="Body_LeftWristPitch"/>
-    <child link="leftPinkyProximal"/>
+    <child link="leftIndexProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <transmission name="LeftFinger5_trans" type="SimpleTransmission">
-    <actuator name="LeftFinger5_motor" />
-    <joint name="LeftFinger5" />
+  <transmission name="LeftFinger2_trans" type="SimpleTransmission">
+    <actuator name="LeftFinger2_motor" />
+    <joint name="LeftFinger2" />
     <mechanicalReduction>1</mechanicalReduction>
   </transmission>
-  <joint name="leftPinkyKnuckle2" type="revolute">
+  <joint name="leftIndexKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
-    <parent link="leftPinkyProximal"/>
-    <child link="leftPinkyMedial"/>
+    <parent link="leftIndexProximal"/>
+    <child link="leftIndexMedial"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <joint name="leftPinkyKnuckle3" type="revolute">
+  <joint name="leftIndexKnuckle3" type="revolute">
     <origin rpy="0 -0 0" xyz="0.022 0 0"/>
-    <parent link="leftPinkyMedial"/>
-    <child link="leftPinkyDistal"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
-  </joint>
-
-  <joint name="LeftFinger4" type="revolute">
-    <origin rpy="1.5708 0.785398 1.5708" xyz="-0.00910415 0.0298617 -0.088883"/>
-    <parent link="Body_LeftWristPitch"/>
-    <child link="leftRingProximal"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
-  </joint>
-  <transmission name="LeftFinger4_trans" type="SimpleTransmission">
-    <actuator name="LeftFinger4_motor" />
-    <joint name="LeftFinger4" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-
-  <joint name="leftRingKnuckle2" type="revolute">
-    <origin rpy="0 -0 0" xyz="0.032 0 0"/>
-    <parent link="leftRingProximal"/>
-    <child link="leftRingMedial"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
-  </joint>
-  <joint name="leftRingKnuckle3" type="revolute">
-    <origin rpy="0 -0 0" xyz="0.022 0 0"/>
-    <parent link="leftRingMedial"/>
-    <child link="leftRingDistal"/>
+    <parent link="leftIndexMedial"/>
+    <child link="leftIndexDistal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
@@ -1327,32 +1299,60 @@ Proximal"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
 
-  <joint name="LeftFinger2" type="revolute">
-    <origin rpy="1.5708 0.785398 1.5708" xyz="0.0289159 0.0298617 -0.088883"/>
+  <joint name="LeftFinger4" type="revolute">
+    <origin rpy="1.5708 0.785398 1.5708" xyz="-0.00910415 0.0298617 -0.088883"/>
     <parent link="Body_LeftWristPitch"/>
-    <child link="leftIndexProximal"/>
+    <child link="leftRingProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <transmission name="LeftFinger2_trans" type="SimpleTransmission">
-    <actuator name="LeftFinger2_motor" />
-    <joint name="LeftFinger2" />
+  <transmission name="LeftFinger4_trans" type="SimpleTransmission">
+    <actuator name="LeftFinger4_motor" />
+    <joint name="LeftFinger4" />
     <mechanicalReduction>1</mechanicalReduction>
   </transmission>
-  <joint name="leftIndexKnuckle2" type="revolute">
+  <joint name="leftRingKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
-    <parent link="leftIndexProximal"/>
-    <child link="leftIndexMedial"/>
+    <parent link="leftRingProximal"/>
+    <child link="leftRingMedial"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <joint name="leftIndexKnuckle3" type="revolute">
+  <joint name="leftRingKnuckle3" type="revolute">
     <origin rpy="0 -0 0" xyz="0.022 0 0"/>
-    <parent link="leftIndexMedial"/>
-    <child link="leftIndexDistal"/>
+    <parent link="leftRingMedial"/>
+    <child link="leftRingDistal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
+
+  <joint name="LeftFinger5" type="revolute">
+    <origin rpy="1.5708 0.785398 1.5708" xyz="-0.0281041 0.0298617 -0.088883"/>
+    <parent link="Body_LeftWristPitch"/>
+    <child link="leftPinkyProximal"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
+  </joint>
+  <transmission name="LeftFinger5_trans" type="SimpleTransmission">
+    <actuator name="LeftFinger5_motor" />
+    <joint name="LeftFinger5" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <joint name="leftPinkyKnuckle2" type="revolute">
+    <origin rpy="0 -0 0" xyz="0.032 0 0"/>
+    <parent link="leftPinkyProximal"/>
+    <child link="leftPinkyMedial"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
+  </joint>
+  <joint name="leftPinkyKnuckle3" type="revolute">
+    <origin rpy="0 -0 0" xyz="0.022 0 0"/>
+    <parent link="leftPinkyMedial"/>
+    <child link="leftPinkyDistal"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
+  </joint>
+
 -->
   <joint name="RightShoulderPitch" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0122581 -0.139027 1.0486356"/>
@@ -1459,56 +1459,29 @@ Proximal"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
 
-  <joint name="RightFinger5" type="revolute">
-    <origin rpy="1.5708 0.785398 -1.5708" xyz="-0.0281041 -0.0298617 -0.088883"/>
+  <joint name="RightFinger2" type="revolute">
+    <origin rpy="1.5708 0.785398 -1.5708" xyz="0.0289159 -0.0298617 -0.088883"/>
     <parent link="Body_RightWristPitch"/>
-    <child link="rightPinkyProximal"/>
+    <child link="rightIndexProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <transmission name="RightFinger5_trans" type="SimpleTransmission">
-    <actuator name="RightFinger5_motor" />
-    <joint name="RightFinger5" />
+  <transmission name="RightFinger2_trans" type="SimpleTransmission">
+    <actuator name="RightFinger2_motor" />
+    <joint name="RightFinger2" />
     <mechanicalReduction>1</mechanicalReduction>
   </transmission>
-  <joint name="rightPinkyKnuckle2" type="revolute">
+  <joint name="rightIndexKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
-    <parent link="rightPinkyProximal"/>
-    <child link="rightPinkyMedial"/>
+    <parent link="rightIndexProximal"/>
+    <child link="rightIndexMedial"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <joint name="rightPinkyKnuckle3" type="revolute">
+  <joint name="rightIndexKnuckle3" type="revolute">
     <origin rpy="0 -0 0" xyz="0.022 0 0"/>
-    <parent link="rightPinkyMedial"/>
-    <child link="rightPinkyDistal"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
-  </joint>
-
-  <joint name="RightFinger4" type="revolute">
-    <origin rpy="1.5708 0.785398 -1.5708" xyz="-0.00910415 -0.0298617 -0.088883"/>
-    <parent link="Body_RightWristPitch"/>
-    <child link="rightRingProximal"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
-  </joint>
-  <transmission name="RightFinger4_trans" type="SimpleTransmission">
-    <actuator name="RightFinger4_motor" />
-    <joint name="RightFinger4" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
-  <joint name="rightRingKnuckle2" type="revolute">
-    <origin rpy="0 -0 0" xyz="0.032 0 0"/>
-    <parent link="rightRingProximal"/>
-    <child link="rightRingMedial"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
-  </joint>
-  <joint name="rightRingKnuckle3" type="revolute">
-    <origin rpy="0 -0 0" xyz="0.022 0 0"/>
-    <parent link="rightRingMedial"/>
-    <child link="rightRingDistal"/>
+    <parent link="rightIndexMedial"/>
+    <child link="rightIndexDistal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
@@ -1540,32 +1513,60 @@ Proximal"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
 
-  <joint name="RightFinger2" type="revolute">
-    <origin rpy="1.5708 0.785398 -1.5708" xyz="0.0289159 -0.0298617 -0.088883"/>
+  <joint name="RightFinger4" type="revolute">
+    <origin rpy="1.5708 0.785398 -1.5708" xyz="-0.00910415 -0.0298617 -0.088883"/>
     <parent link="Body_RightWristPitch"/>
-    <child link="rightIndexProximal"/>
+    <child link="rightRingProximal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <transmission name="RightFinger2_trans" type="SimpleTransmission">
-    <actuator name="RightFinger2_motor" />
-    <joint name="RightFinger2" />
+  <transmission name="RightFinger4_trans" type="SimpleTransmission">
+    <actuator name="RightFinger4_motor" />
+    <joint name="RightFinger4" />
     <mechanicalReduction>1</mechanicalReduction>
   </transmission>
-  <joint name="rightIndexKnuckle2" type="revolute">
+  <joint name="rightRingKnuckle2" type="revolute">
     <origin rpy="0 -0 0" xyz="0.032 0 0"/>
-    <parent link="rightIndexProximal"/>
-    <child link="rightIndexMedial"/>
+    <parent link="rightRingProximal"/>
+    <child link="rightRingMedial"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
-  <joint name="rightIndexKnuckle3" type="revolute">
+  <joint name="rightRingKnuckle3" type="revolute">
     <origin rpy="0 -0 0" xyz="0.022 0 0"/>
-    <parent link="rightIndexMedial"/>
-    <child link="rightIndexDistal"/>
+    <parent link="rightRingMedial"/>
+    <child link="rightRingDistal"/>
     <axis xyz="0 0 -1"/>
     <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
   </joint>
+
+  <joint name="RightFinger5" type="revolute">
+    <origin rpy="1.5708 0.785398 -1.5708" xyz="-0.0281041 -0.0298617 -0.088883"/>
+    <parent link="Body_RightWristPitch"/>
+    <child link="rightPinkyProximal"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
+  </joint>
+  <transmission name="RightFinger5_trans" type="SimpleTransmission">
+    <actuator name="RightFinger5_motor" />
+    <joint name="RightFinger5" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <joint name="rightPinkyKnuckle2" type="revolute">
+    <origin rpy="0 -0 0" xyz="0.032 0 0"/>
+    <parent link="rightPinkyProximal"/>
+    <child link="rightPinkyMedial"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
+  </joint>
+  <joint name="rightPinkyKnuckle3" type="revolute">
+    <origin rpy="0 -0 0" xyz="0.022 0 0"/>
+    <parent link="rightPinkyMedial"/>
+    <child link="rightPinkyDistal"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="10.0" lower="0" upper="1.57" velocity="1.0"/>
+  </joint>
+
 -->
   <joint name="TrunkYaw" type="revolute">
     <origin rpy="0 -0 0" xyz="0.0122662 0.00245974 0.84738"/><!--0.15262"/>-->
