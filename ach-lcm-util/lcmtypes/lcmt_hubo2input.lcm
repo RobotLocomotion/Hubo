@@ -10,7 +10,7 @@ struct hubo_hubo2input
   double Neck2;
   double LeftShoulderPitch;
   double LeftShoulderRoll;
-  double LeftShoudlerYaw;
+  double LeftShoulderYaw;
   double LeftElbowPitch;
   double LeftWristYaw;
   double LeftWristPitch;
