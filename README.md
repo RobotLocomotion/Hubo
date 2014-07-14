@@ -13,11 +13,17 @@ The PC/104 uses ach-lcm-util to broadcast lcm channels on its state and control.
 ========= Features ========
 
 URDF......................OK
+
 runPassive................OK
+
 Live Visualier............OK
+
 HuboBiped.................OK
+
 TestIKTraj................OK
+
 runHuboWalkingPlanning....OK
+
 OpenLoopPlayback..........OK/UnScripted
 
 
