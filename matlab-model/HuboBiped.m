@@ -3,6 +3,7 @@ classdef HuboBiped < TimeSteppingRigidBodyManipulator & Biped
   methods
 
     function obj=HuboBiped(urdf,options)
+      addpath('./frame');
       if nargin < 1
           urdf = 'urdf/hubo_minimal_contact.urdf';
       end
@@ -164,9 +165,9 @@ classdef HuboBiped < TimeSteppingRigidBodyManipulator & Biped
     default_walking_params = struct('step_speed', 0.2,... % speed of the swing foot (m/s)
                                     'step_height', 0.02,... % approximate clearance over terrain (m)
                                     'hold_frac', 0.4,... % fraction of the swing time spent in double support
-                                    'drake_min_hold_time', 1.0,... % minimum time in double support (s)
+                                    'drake_min_hold_time', 0.5,... % minimum time in double support (s)
                                     'mu', 1.0,... % friction coefficient
-                                    'constrain_full_foot_pose', true); % whether to constrain the swing foot roll and pitch
+                                    'constrain_full_foot_pose', false); % whether to constrain the swing foot roll and pitch
   end
   properties
     fixed_point_file = fullfile( 'data', 'hubo_fp.mat');

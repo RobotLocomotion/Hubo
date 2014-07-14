@@ -5,7 +5,7 @@ function runAtlasDynamics
 options.floating = true;
 options.dt = 0.001;
 options.terrain = RigidBodyFlatTerrain;
-r = Atlas('urdf/atlas_minimal_contact.urdf',options);
+r = HuboBiped('urdf/hubo_minimal_contact.urdf',options);
 r = r.removeCollisionGroupsExcept({'heel','toe','back','front','knee','butt'});
 r = compile(r);
 

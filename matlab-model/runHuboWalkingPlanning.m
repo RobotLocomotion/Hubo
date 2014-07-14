@@ -20,7 +20,7 @@ r = r.setInitialState(x0);
 
 % Plan footsteps to the goal
 q0 = x0(1:r.getNumDOF());
-goal_pos = struct('right', [1;0;0;0;0;0], 'left', [1;0.3;0;0;0;0]);
+goal_pos = struct('right', [1;0;0;0;0;0], 'left', [1;0;0;0;0;0]);
 footstep_plan = r.planFootsteps(q0, goal_pos);
 
 % Show the result

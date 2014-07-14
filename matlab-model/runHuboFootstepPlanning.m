@@ -8,8 +8,8 @@ function plan = runAtlasFootstepPlanning()
 
 checkDependency('lcmgl');
 % Set up the model
-load('data/atlas_fp.mat', 'xstar');
-r = Atlas('urdf/atlas_minimal_contact.urdf');
+load('data/hubo_fp.mat', 'xstar');
+r = HuboBiped('urdf/hubo_minimal_contact.urdf');
 r = r.setInitialState(xstar);
 
 % Find the initial positions of the feet

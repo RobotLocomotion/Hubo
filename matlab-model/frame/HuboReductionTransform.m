@@ -14,11 +14,11 @@ classdef HuboReductionTransform < CoordinateTransform
        ytraj = xtraj();
     end
     function y = output(obj,t,x,u)
-       if isempty(x)
+       if isempty(u)
            y = zeros(28,1);
            return
        end
-       y = x(6:34);
+       y = u(7:35);
     end
   end
 end
