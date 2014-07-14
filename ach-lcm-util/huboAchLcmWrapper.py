@@ -13,15 +13,15 @@ import time
 from ctypes import *
 import threading 
 #Import LCM Messages
-from lcmtypes import lcmt_hubo2state
-from lcmtypes import lcmt_hubo2input
+from lcmtypes import hubo_hubo2state
+from lcmtypes import hubo_hubo2input
 
 
 
 
 #Message Conversion
 def convertLCM_Matlab(x):
-    msg = lcmt_hubo2state.lcmt_hubo2state()
+    msg = hubo_hubo2state()
     msg.timestamp =  time.time()
     
     #Baselink state not included
@@ -41,7 +41,7 @@ def convertLCM_Matlab(x):
     msg.LeftShoulderRolldot = x.joint[ha.LSR].vel
 
     msg.LeftShoulderYaw = x.joint[ha.LSY].pos
-    msg.LeftShoudlerYawdot = x.joint[ha.LSY].vel
+    msg.LeftShoulderYawdot = x.joint[ha.LSY].vel
 
     msg.LeftElbowPitch = x.joint[ha.LEB].pos
     msg.LeftElbowPitchdot = x.joint[ha.LEB].vel
@@ -56,10 +56,10 @@ def convertLCM_Matlab(x):
     msg.RightShoulderPitchdot = x.joint[ha.RSP].vel
 
     msg.RightShoulderRoll = x.joint[ha.RSR].pos
-    msg.RSRdot = x.joint[ha.RSR].vel
+    msg.RightShoulderRolldot = x.joint[ha.RSR].vel
 
     msg.RightShoulderYaw = x.joint[ha.RSY].pos
-    msg.RigthShoulderYawdot = x.joint[ha.RSY].vel
+    msg.RightShoulderYawdot = x.joint[ha.RSY].vel
 
     msg.RightElbowPitch = x.joint[ha.REB].pos
     msg.RightElbowPitchdot = x.joint[ha.REB].vel
@@ -105,7 +105,7 @@ def convertLCM_Matlab(x):
 
 
     msg.LeftHipYaw = x.joint[ha.LHY].pos
-    msg.LeftHYdot = x.joint[ha.LHY].vel
+    msg.LeftHipYawdot = x.joint[ha.LHY].vel
 
     msg.LeftHipRoll = x.joint[ha.LHR].pos
     msg.LeftHipRolldot = x.joint[ha.LHR].vel
@@ -142,8 +142,20 @@ def convertLCM_Matlab(x):
     return msg
 
 def convertACH_Command(msg, ref):
-    ref.LSP = msg.LeftShoulderPitch
-    print ref.LSP
+    ref.ref[ha.LSP] = msg.LeftShoulderPitch
+    ref.ref[ha.WST] = msg.TrunkYaw
+    ref.ref[ha.LHY] = msg.LeftHipYaw
+    ref.ref[ha.LHR] = msg.LeftHipRoll
+    ref.ref[ha.LHP] = msg.LeftHipPitch
+    ref.ref[ha.LKN] = msg.LeftKneePitch
+    ref.ref[ha.LAP] = msg.LeftAnklePitch
+    ref.ref[ha.LAR] = msg.LeftAnkleRoll
+    ref.ref[ha.RHY] = msg.RightHipYaw
+    ref.ref[ha.RHR] = msg.RightHipRoll
+    ref.ref[ha.RHP] = msg.RightHipPitch
+    ref.ref[ha.RKN] = msg.RightKneePitch
+    ref.ref[ha.RAP] = msg.RightAnklePitch
+    ref.ref[ha.RAR] = msg.RightAnkleRoll
 
 class huboLCMWrapper:
     
@@ -155,12 +167,13 @@ class huboLCMWrapper:
         self.lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
         self.stateChan.flush()
         self.refChan.flush()
-        self.subscription = self.lc.subscribe("HuboRef",self.command_handler)
+        self.subscription = self.lc.subscribe("HuboInput",self.command_handler)
         
     def command_handler(self,channel,data):
-        msg = lcmt.lcmt_hubo2state.encode(data)
+        msg = hubo_hubo2input.decode(data)
         convertACH_Command(msg,self.ref)
         self.refChan.put(self.ref)
+
     def broadcast_state(self):
         [status, framesize] = self.stateChan.get(self.state, wait=True, last=False)
         if not ( status == ach.ACH_OK or status == ach.ACH_MISSED_FRAME):

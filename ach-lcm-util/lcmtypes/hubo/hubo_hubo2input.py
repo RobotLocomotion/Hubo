@@ -7,7 +7,7 @@ import cStringIO as StringIO
 import struct
 
 class hubo_hubo2input(object):
-    __slots__ = ["timestamp", "NeckYaw", "Neck1", "Neck2", "LeftShoulderPitch", "LeftShoulderRoll", "LeftShoudlerYaw", "LeftElbowPitch", "LeftWristYaw", "LeftWristPitch", "LeftFinger1", "LeftFinger2", "LeftFinger3", "LeftFinger4", "LeftFinger5", "RightShoulderPitch", "RightShoulderRoll", "RightShoulderYaw", "RightElbowPitch", "RightWristYaw", "RightWristPitch", "RightFinger1", "RightFinger2", "RightFinger3", "RightFinger4", "RightFinger5", "TrunkYaw", "LeftHipYaw", "LeftHipRoll", "LeftHipPitch", "LeftKneePitch", "LeftAnklePitch", "LeftAnkleRoll", "RightHipYaw", "RightHipRoll", "RightHipPitch", "RightKneePitch", "RightAnklePitch", "RightAnkleRoll"]
+    __slots__ = ["timestamp", "NeckYaw", "Neck1", "Neck2", "LeftShoulderPitch", "LeftShoulderRoll", "LeftShoulderYaw", "LeftElbowPitch", "LeftWristYaw", "LeftWristPitch", "LeftFinger1", "LeftFinger2", "LeftFinger3", "LeftFinger4", "LeftFinger5", "RightShoulderPitch", "RightShoulderRoll", "RightShoulderYaw", "RightElbowPitch", "RightWristYaw", "RightWristPitch", "RightFinger1", "RightFinger2", "RightFinger3", "RightFinger4", "RightFinger5", "TrunkYaw", "LeftHipYaw", "LeftHipRoll", "LeftHipPitch", "LeftKneePitch", "LeftAnklePitch", "LeftAnkleRoll", "RightHipYaw", "RightHipRoll", "RightHipPitch", "RightKneePitch", "RightAnklePitch", "RightAnkleRoll"]
 
     def __init__(self):
         self.timestamp = 0
@@ -16,7 +16,7 @@ class hubo_hubo2input(object):
         self.Neck2 = 0.0
         self.LeftShoulderPitch = 0.0
         self.LeftShoulderRoll = 0.0
-        self.LeftShoudlerYaw = 0.0
+        self.LeftShoulderYaw = 0.0
         self.LeftElbowPitch = 0.0
         self.LeftWristYaw = 0.0
         self.LeftWristPitch = 0.0
@@ -57,7 +57,7 @@ class hubo_hubo2input(object):
         return buf.getvalue()
 
     def _encode_one(self, buf):
-        buf.write(struct.pack(">qdddddddddddddddddddddddddddddddddddddd", self.timestamp, self.NeckYaw, self.Neck1, self.Neck2, self.LeftShoulderPitch, self.LeftShoulderRoll, self.LeftShoudlerYaw, self.LeftElbowPitch, self.LeftWristYaw, self.LeftWristPitch, self.LeftFinger1, self.LeftFinger2, self.LeftFinger3, self.LeftFinger4, self.LeftFinger5, self.RightShoulderPitch, self.RightShoulderRoll, self.RightShoulderYaw, self.RightElbowPitch, self.RightWristYaw, self.RightWristPitch, self.RightFinger1, self.RightFinger2, self.RightFinger3, self.RightFinger4, self.RightFinger5, self.TrunkYaw, self.LeftHipYaw, self.LeftHipRoll, self.LeftHipPitch, self.LeftKneePitch, self.LeftAnklePitch, self.LeftAnkleRoll, self.RightHipYaw, self.RightHipRoll, self.RightHipPitch, self.RightKneePitch, self.RightAnklePitch, self.RightAnkleRoll))
+        buf.write(struct.pack(">qdddddddddddddddddddddddddddddddddddddd", self.timestamp, self.NeckYaw, self.Neck1, self.Neck2, self.LeftShoulderPitch, self.LeftShoulderRoll, self.LeftShoulderYaw, self.LeftElbowPitch, self.LeftWristYaw, self.LeftWristPitch, self.LeftFinger1, self.LeftFinger2, self.LeftFinger3, self.LeftFinger4, self.LeftFinger5, self.RightShoulderPitch, self.RightShoulderRoll, self.RightShoulderYaw, self.RightElbowPitch, self.RightWristYaw, self.RightWristPitch, self.RightFinger1, self.RightFinger2, self.RightFinger3, self.RightFinger4, self.RightFinger5, self.TrunkYaw, self.LeftHipYaw, self.LeftHipRoll, self.LeftHipPitch, self.LeftKneePitch, self.LeftAnklePitch, self.LeftAnkleRoll, self.RightHipYaw, self.RightHipRoll, self.RightHipPitch, self.RightKneePitch, self.RightAnklePitch, self.RightAnkleRoll))
 
     def decode(data):
         if hasattr(data, 'read'):
@@ -71,14 +71,14 @@ class hubo_hubo2input(object):
 
     def _decode_one(buf):
         self = hubo_hubo2input()
-        self.timestamp, self.NeckYaw, self.Neck1, self.Neck2, self.LeftShoulderPitch, self.LeftShoulderRoll, self.LeftShoudlerYaw, self.LeftElbowPitch, self.LeftWristYaw, self.LeftWristPitch, self.LeftFinger1, self.LeftFinger2, self.LeftFinger3, self.LeftFinger4, self.LeftFinger5, self.RightShoulderPitch, self.RightShoulderRoll, self.RightShoulderYaw, self.RightElbowPitch, self.RightWristYaw, self.RightWristPitch, self.RightFinger1, self.RightFinger2, self.RightFinger3, self.RightFinger4, self.RightFinger5, self.TrunkYaw, self.LeftHipYaw, self.LeftHipRoll, self.LeftHipPitch, self.LeftKneePitch, self.LeftAnklePitch, self.LeftAnkleRoll, self.RightHipYaw, self.RightHipRoll, self.RightHipPitch, self.RightKneePitch, self.RightAnklePitch, self.RightAnkleRoll = struct.unpack(">qdddddddddddddddddddddddddddddddddddddd", buf.read(312))
+        self.timestamp, self.NeckYaw, self.Neck1, self.Neck2, self.LeftShoulderPitch, self.LeftShoulderRoll, self.LeftShoulderYaw, self.LeftElbowPitch, self.LeftWristYaw, self.LeftWristPitch, self.LeftFinger1, self.LeftFinger2, self.LeftFinger3, self.LeftFinger4, self.LeftFinger5, self.RightShoulderPitch, self.RightShoulderRoll, self.RightShoulderYaw, self.RightElbowPitch, self.RightWristYaw, self.RightWristPitch, self.RightFinger1, self.RightFinger2, self.RightFinger3, self.RightFinger4, self.RightFinger5, self.TrunkYaw, self.LeftHipYaw, self.LeftHipRoll, self.LeftHipPitch, self.LeftKneePitch, self.LeftAnklePitch, self.LeftAnkleRoll, self.RightHipYaw, self.RightHipRoll, self.RightHipPitch, self.RightKneePitch, self.RightAnklePitch, self.RightAnkleRoll = struct.unpack(">qdddddddddddddddddddddddddddddddddddddd", buf.read(312))
         return self
     _decode_one = staticmethod(_decode_one)
 
     _hash = None
     def _get_hash_recursive(parents):
         if hubo_hubo2input in parents: return 0
-        tmphash = (0x85d79bf67f9bbd26) & 0xffffffffffffffff
+        tmphash = (0x7ed6c54f1eb35324) & 0xffffffffffffffff
         tmphash  = (((tmphash<<1)&0xffffffffffffffff)  + (tmphash>>63)) & 0xffffffffffffffff
         return tmphash
     _get_hash_recursive = staticmethod(_get_hash_recursive)
