@@ -9,17 +9,17 @@ import hubo_ach as ha
 import time
 import ach
 
-from lcmtype import lcmt_hubo2state as lcmt
+from lcmtype import lcmt_hubo2input
 
 
 
 def my_handler(channel, data):
-    msg = lcmt.lcmt_hubo2state.decode(data)
-    print("   positionLSP    = %s" % str(msg.LSP))
+    msg = lcmt_hubo2input.lcmt_hubo2input.decode(data)
+    print("   commandLSP    = %s" % str(msg.LeftShoulderPitch))
     
 
-lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=2")
-subscription = lc.subscribe("HuboRef", my_handler)
+lc = lcm.LCM("udpm://239.255.76.67:7667?ttl=1")
+subscription = lc.subscribe("HuboInput", my_handler)
 
 try:
     while True:
